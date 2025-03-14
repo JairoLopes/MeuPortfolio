@@ -6,9 +6,8 @@ const Projects = () => {
     {
       nome: "Site Personal",
       desc: "Landing page de portfólio e contratação de personal trainer",
-      tech_usadas: ["Tailwind CSS", "Javascript"],
-      link_projeto:
-        "https://tallespersonal.netlify.app/?fbclid=PAZXh0bgNhZW0CMTEAAaaPMvKtWX69xeTB1D4cAk62TXUPKd_7D9Z9hk1PK5h7bJ3TdYSOLVlVYHo_aem_IoYciumQZkrUEC4UvDGBYA",
+      tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+      link_projeto: "https://tallespersonal.vercel.app/",
     },
     {
       nome: "Gerador de senhas customizável",
@@ -73,8 +72,8 @@ const Projects = () => {
                 {i.tech_usadas.map((tech, index) => (
                   <span
                     key={index}
-                    className="bg-secondaryTheme/10 text-secondaryTheme py-1 px-3
-                rounded-full text-sm hover:bg-secondaryTheme/20 hover:shadow-2xl hover:shadow-secondaryTheme/60"
+                    className="bg-thirdTheme/10 text-thirdTheme py-1 px-3
+                rounded-full text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60"
                   >
                     {tech}
                   </span>

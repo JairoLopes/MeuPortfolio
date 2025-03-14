@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <section
       id="footer"
-      className="shadow-2xl shadow-secondaryTheme border-t border-mainTheme/40 w-full"
+      className="bg-black/70 shadow-2xl shadow-thirdTheme border-t border-mainTheme/40 w-full"
     >
       {/* Container que engloba todo o footer */}
       <div className="w-full mx-auto text-white pt-10 pb-4 space-y-4">

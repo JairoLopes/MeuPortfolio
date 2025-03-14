@@ -17,8 +17,9 @@ body {
 }
 
 @theme {
-  --color-mainTheme: #7f22fe;
-  --color-secondaryTheme: #1e90ff;
+  --color-mainTheme: #4d4dff;
+  --color-secondaryTheme: #ff9900;
+  --color-thirdTheme: #ff0066;
   --color-myWhite: #e2e6e9;
   --color-deepBlue: #050514;
   --color-navBlack: #050514;
@@ -84,7 +85,7 @@ strong {
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-mainTheme/40 via-purple-600 to-mainTheme/50 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-mainTheme via-mainTheme to-sky-500 bg-clip-text text-transparent;
 }
 
 .btn-hover {

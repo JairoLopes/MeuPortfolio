@@ -11,12 +11,14 @@ import {
 const MotionDigitando = motion(Digitando);
 
 const Home = () => {
+  const image = "/img/tech1.jpg";
   const timeDuration = 1.5;
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className={`min-h-screen flex items-center justify-center relative
+      sm:bg-[linear-gradient(to_right,rgb(5,5,20,0.9),rgb(5,5,20,0.9)),url('/img/tech3.jpg')] bg-no-repeat bg-fixed bg-cover`}
     >
       {/* Sub-container que engloba toda a home */}
       <div className="text-center z-10 px-4">
@@ -46,7 +48,7 @@ const Home = () => {
             initial={slideDownFadeIn.initial}
             whileInView={slideDownFadeIn.animate}
             transition={{ duration: timeDuration, delay: 0.25 }}
-            className="text-gray-300 text-lg max-w-lg mx-auto"
+            className="text-gray-300 sm:text-lg max-w-lg mx-auto"
           >
             Desenvolvedor Frontend com foco em <strong>React</strong>,{" "}
             <strong>Tailwind CSS</strong> e <strong>TypeScript</strong>, criando

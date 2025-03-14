@@ -77,9 +77,7 @@ const About = () => {
                     transition={{ delay: index * 0.2 }}
                     className="flex flex-col items-center justify-center gap-2 hover:scale-95 active:scale-95 transition-all duration-500"
                   >
-                    <i
-                      className={`${skill.icon} text-5xl text-secondaryTheme`}
-                    ></i>
+                    <i className={`${skill.icon} text-5xl text-thirdTheme`}></i>
                     <span className="font-semibold text-myWhite">
                       {skill.tech}
                     </span>
