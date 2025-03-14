@@ -11,7 +11,6 @@ import {
 const MotionDigitando = motion(Digitando);
 
 const Home = () => {
-  const image = "/img/tech1.jpg";
   const timeDuration = 1.5;
 
   return (
