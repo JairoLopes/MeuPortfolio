@@ -1,6 +1,6 @@
 import { motion, easeInOut } from "framer-motion";
 import { Fragment } from "react";
-import { slideUpFadeIn, growIn } from "../../animations";
+import { slideUpFadeIn } from "../../animations";
 
 // Dados da experiência profissional
 const exp = [
