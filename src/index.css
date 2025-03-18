@@ -84,6 +84,10 @@ strong {
   @apply text-secondaryTheme italic;
 }
 
+.strong2 {
+  @apply !text-thirdTheme italic;
+}
+
 .gradient-text {
   @apply bg-gradient-to-r from-mainTheme via-mainTheme to-sky-500 bg-clip-text text-transparent;
 }
@@ -99,7 +103,7 @@ strong {
 
   /* Estilização do hover */
   @apply hover:text-white hover:shadow-mainTheme hover:shadow-lg hover:before:h-64 
-         hover:before:-translate-y-32 transition-shadow duration-1000;
+         hover:before:-translate-y-32 transition-all hover:-translate-y-2 duration-700;
 
   /* Estilização do active */
   @apply active:scale-95;
@@ -107,7 +111,7 @@ strong {
 
 .btn-hover2 {
   /* Estilização padrão */
-  @apply bg-deepBlue text-white py-3 px-6 font-medium transition relative 
+  @apply bg-deepBlue text-white py-3 px-6 font-medium relative 
          overflow-hidden rounded-sm border border-mainTheme shadow-lg;
 
   /* Estilização do before (efeito de fundo animado) */
@@ -115,8 +119,8 @@ strong {
          before:-translate-x-20 before:rotate-45 before:bg-mainTheme before:duration-1000;
 
   /* Estilização do hover */
-  @apply shadow-mainTheme hover:shadow-none transition-shadow duration-1000 hover:before:h-64 
-         hover:before:-translate-y-32;
+  @apply shadow-mainTheme hover:shadow-none transition-all duration-700 hover:before:h-64 
+         hover:before:-translate-y-32 hover:-translate-y-2;
 
   /* Estilização do active */
   @apply active:scale-95;

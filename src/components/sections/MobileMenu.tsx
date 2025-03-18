@@ -53,6 +53,20 @@ const MobileMenu = (props: navProps) => {
       >
         Sobre
       </a>
+
+      {/* EXPERIENCIA */}
+      <a
+        href="#experiencia"
+        onClick={() => props.setMenuOpen(false)}
+        className={`text-2xl font-semibold text-white mt-4 transform transition-transform duration-400${
+          props.menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-32"
+        }`}
+      >
+        Experiência
+      </a>
+
       {/* PROJETOS */}
       <a
         href="#projects"
@@ -76,6 +90,19 @@ const MobileMenu = (props: navProps) => {
         }`}
       >
         Contato
+      </a>
+
+      {/* Github */}
+      <a
+        href="https://github.com/JairoLopes"
+        onClick={() => props.setMenuOpen(false)}
+        className={`block sm:hidden text-2xl font-semibold text-white mt-4 transform transition-transform duration-800 ${
+          props.menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-32"
+        }`}
+      >
+        Github
       </a>
     </div>
   );

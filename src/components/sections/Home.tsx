@@ -4,14 +4,16 @@ import {
   slideRight,
   slideLeft,
   slideDownFadeIn,
+  slideUpFadeIn,
   pulseIn,
+  growIn,
 } from "../../animations";
 
 /* Armazena o componente numa classe motion para o componente aceitar as propriedades do motion */
 const MotionDigitando = motion(Digitando);
 
 const Home = () => {
-  const timeDuration = 1.5;
+  const timeDuration = 2.5;
 
   return (
     <section
@@ -23,8 +25,8 @@ const Home = () => {
       <div className="text-center z-10 px-4">
         {/* Titulo Meu Nome */}
         <motion.h1
-          initial={slideRight.initial}
-          whileInView={slideRight.animate}
+          initial={growIn.initial}
+          whileInView={growIn.animate}
           transition={{ duration: timeDuration, delay: 0.25 }}
           className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
         >
@@ -39,7 +41,7 @@ const Home = () => {
             whileInView={pulseIn.animate}
             transition={{ duration: 2, delay: 0.8 }}
             texto="Desenvolvedor Front-End"
-            classesTw="text-myWhite font-semibold text-3xl mb-8 max-w-lg mx-auto min-h-[30px]"
+            classesTw="text-myWhite font-semibold text-xl text-secondaryTheme sm:text-3xl mb-8 max-w-lg mx-auto min-h-[30px]"
             classeCursor="font-medium text-myWhite"
           />
 
@@ -47,19 +49,21 @@ const Home = () => {
             initial={slideDownFadeIn.initial}
             whileInView={slideDownFadeIn.animate}
             transition={{ duration: timeDuration, delay: 0.25 }}
-            className="text-gray-300 sm:text-lg max-w-lg mx-auto"
+            className="text-gray-300 text-start sm:text-center sm:text-lg max-w-2xl mx-auto"
           >
-            Desenvolvedor Frontend com foco em <strong>React</strong>,{" "}
-            <strong>Tailwind CSS</strong> e <strong>TypeScript</strong>, criando
-            interfaces elegantes, responsivas e de alto desempenho,
-            desenvolvendo componentes reutilizáveis e aplicando animações
-            envolventes com <strong>Framer Motion</strong> para experiências
-            dinâmicas.
+            Desenvolvedor Frontend com foco em{" "}
+            <strong className="strong2">React</strong>,{" "}
+            <strong className="strong2">Tailwind CSS</strong> e{" "}
+            <strong className="strong2">TypeScript</strong>.<br />
+            Utilizando ferramentas de <strong className="strong2">
+              IA
+            </strong>{" "}
+            para otimização de código.
           </motion.p>
         </div>
 
         {/* CONTAINER ONDE FICA OS LINKS DE VER PROJETOS E CONTATO */}
-        <div className=" flex justify-center space-x-4">
+        <div className="flex justify-center items-center space-x-4">
           {/* PROJETOS LINK */}
           <motion.a
             initial={slideRight.initial}
@@ -83,6 +87,18 @@ const Home = () => {
           </motion.a>
         </div>
       </div>
+
+      {/* GITHUB LINK */}
+      <motion.a
+        initial={slideUpFadeIn.initial}
+        whileInView={slideUpFadeIn.animate}
+        transition={{ duration: timeDuration, delay: 0.25 }}
+        href="https://github.com/JairoLopes"
+        target="_blank"
+        className="hidden sm:flex flex-col absolute bottom-4 right-4 hover:-translate-y-2 transition-all duration-700"
+      >
+        <i className="bx bxl-github sm:text-4xl lg:text-5xl text-mainTheme hover:text-secondaryTheme transition-colors duration-1000"></i>
+      </motion.a>
     </section>
   );
 };

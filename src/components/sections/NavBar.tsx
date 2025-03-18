@@ -50,6 +50,7 @@ const NavBar = (props: navProps) => {
 
           {/*CONTAINER DO MENU */}
           <div className="hidden md:flex items-center space-x-8 font-extrabold">
+            {/* HOME */}
             <a
               href="#home"
               className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
@@ -57,6 +58,8 @@ const NavBar = (props: navProps) => {
               Home
               <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
             </a>
+
+            {/* ABOUT */}
             <a
               href="#about"
               className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
@@ -64,6 +67,17 @@ const NavBar = (props: navProps) => {
               Sobre
               <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
             </a>
+
+            {/* EXPERIENCIA */}
+            <a
+              href="#experiencia"
+              className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
+            >
+              Experiência
+              <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
+            </a>
+
+            {/* PROJETOS */}
             <a
               href="#projects"
               className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
@@ -71,6 +85,8 @@ const NavBar = (props: navProps) => {
               Projetos
               <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
             </a>
+
+            {/* CONTATO */}
             <a
               href="#contact"
               className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"

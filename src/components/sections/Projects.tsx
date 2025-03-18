@@ -8,18 +8,21 @@ const Projects = () => {
       desc: "Landing page de portfólio e contratação de personal trainer",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://tallespersonal.vercel.app/",
+      finish: true,
     },
     {
       nome: "Gerador de senhas customizável",
       desc: "(EM BREVE) - Gerador de senhas fortes altamente customizável",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
+      finish: false,
     },
     {
       nome: "Plataforma E-comerce",
       desc: "(EM BREVE) - Front-end funcional de uma plataforma de e-comerce",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
+      finish: false,
     },
   ];
 
@@ -32,7 +35,7 @@ const Projects = () => {
       <div className="max-w-5xl mx-auto px-4">
         {/* TITULO */}
         <motion.h2
-          className="text-center text-3xl font-bold mb-16 gradient-text"
+          className="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
           initial={slideUpFadeIn.initial}
           whileInView={slideUpFadeIn.animate}
           transition={{ duration: 1.2 }}
@@ -50,7 +53,7 @@ const Projects = () => {
               whileInView={slideUpFadeIn.animate}
               transition={{ delay: index * 0.2 }}
               key={index}
-              className="flex flex-col gap-3 p-9 rounded-xl border border-white/10 hover:-translate-y-3
+              className="flex flex-col gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3
              hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme
               transition-all duration-500"
             >
@@ -80,17 +83,19 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/*Container  parar ver projeto */}
+              {/*Container parar ver projeto */}
               <div className="flex items-center  gap-5 mt-6">
                 <a
                   href={`${i.link_projeto}`}
                   target="_blank"
-                  className="font-semibold border-b-2 pb-1 border-secondaryTheme
-                   text-mainTheme hover:text-mainTheme/80 transition-colors duration-500"
+                  className={`flex items-center gap-2 font-semibold border-b-2 pb-1 border-secondaryTheme
+                   text-mainTheme hover:text-mainTheme/80 transition-colors duration-500 ${
+                     i.finish ? "cursor-pointer" : "hidden"
+                   }`}
                 >
                   Ver Projeto
+                  <i className="bx bx-right-arrow-circle text-2xl text-myWhite"></i>
                 </a>
-                <i className="bx bx-right-arrow-circle text-3xl"></i>
               </div>
             </motion.div>
           ))}

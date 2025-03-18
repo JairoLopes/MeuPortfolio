@@ -12,11 +12,6 @@ const Footer = () => {
       tech: "Tailwind CSS",
       icon: "bx bxl-tailwind-css",
     },
-
-    {
-      tech: "JavaScript",
-      icon: "bx bxl-javascript",
-    },
   ];
 
   return (

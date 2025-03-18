@@ -69,7 +69,7 @@ const Contact = () => {
           initial={slideUpFadeIn.initial}
           whileInView={slideUpFadeIn.animate}
           transition={{ duration: 1.2, ease: easeInOut }}
-          className="text-center text-3xl font-bold mb-16 gradient-text"
+          className="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
         >
           Contato
         </motion.h2>
