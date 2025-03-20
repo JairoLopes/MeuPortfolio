@@ -6,6 +6,7 @@ import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Exp from "./components/sections/Exp";
 import Projects from "./components/sections/Projects";
+import Testimonial from "./components/sections/Testimonial";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 
@@ -43,6 +44,9 @@ function App() {
 
         {/* PROJETOS */}
         <Projects />
+
+        {/* TESTIMONIAL */}
+        <Testimonial />
 
         {/* CONTATO */}
         <Contact />

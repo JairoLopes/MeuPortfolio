@@ -86,6 +86,15 @@ const NavBar = (props: navProps) => {
               <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
             </a>
 
+            {/* DEPOIMENTOS */}
+            <a
+              href="#depoimentos"
+              className="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
+            >
+              Depoimentos
+              <span className="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"></span>
+            </a>
+
             {/* CONTATO */}
             <a
               href="#contact"

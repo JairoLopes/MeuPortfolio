@@ -1,6 +1,6 @@
 import { motion, easeInOut } from "framer-motion";
 import { Fragment } from "react";
-import { slideUpFadeIn } from "../../animations";
+import { slideUpFadeIn, growIn } from "../../animations";
 
 // Dados da experiência profissional
 const exp = [
@@ -37,7 +37,12 @@ const exp = [
 // Componente para o círculo na linha do tempo
 function Circle() {
   return (
-    <div className="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"></div>
+    <motion.div
+      initial={growIn.initial}
+      whileInView={growIn.animate}
+      transition={{ duration: 1.2, ease: easeInOut }}
+      className="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"
+    ></motion.div>
   ); // Círculo estilizado
 }
 
@@ -79,7 +84,12 @@ function EventCard({
 // Componente para a barra vertical na linha do tempo
 function Pillar() {
   return (
-    <div className="rounded-t-full rounded-b-full w-2 h-full bg-mainTheme mx-auto"></div>
+    <motion.div
+      initial={growIn.initial}
+      whileInView={growIn.animate}
+      transition={{ duration: 1.2, ease: easeInOut }}
+      className="rounded-t-full rounded-b-full w-2 h-full bg-mainTheme mx-auto"
+    ></motion.div>
   ); // Barra vertical estilizada
 }
 
