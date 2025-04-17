@@ -1,10 +1,10 @@
 import Digitando from "../Digitando";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   slideRight,
   slideLeft,
   slideDownFadeIn,
-  slideUpFadeIn,
   pulseIn,
   growIn,
 } from "../../animations";
@@ -88,17 +88,32 @@ const Home = () => {
         </div>
       </div>
 
-      {/* GITHUB LINK */}
-      <motion.a
-        initial={slideUpFadeIn.initial}
-        whileInView={slideUpFadeIn.animate}
-        transition={{ duration: timeDuration, delay: 0.25 }}
-        href="https://github.com/JairoLopes"
-        target="_blank"
-        className="hidden sm:flex flex-col absolute bottom-4 right-4 hover:-translate-y-2 transition-all duration-700"
-      >
-        <i className="bx bxl-github sm:text-4xl lg:text-5xl text-mainTheme hover:text-secondaryTheme transition-colors duration-1000"></i>
-      </motion.a>
+      {/*CONTAINER DO Linkedin e GITHUB LINK */}
+      <div className="space-y-5 absolute bottom-4 right-4">
+        {/* LINK DO LINKEDIN */}
+        <motion.a
+          initial={slideRight.initial}
+          whileInView={slideRight.animate}
+          transition={{ duration: timeDuration, delay: 0.25 }}
+          href="https://www.linkedin.com/in/jairo-lopes-09a4b7359/"
+          target="_blank"
+          className="hidden sm:flex flex-col hover:-translate-y-2 transition-all duration-700"
+        >
+          <FaLinkedin className="text-4xl text-mainTheme hover:text-secondaryTheme transition-colors duration-1000" />
+        </motion.a>
+
+        {/* LINK DO GITHUB */}
+        <motion.a
+          initial={slideLeft.initial}
+          whileInView={slideLeft.animate}
+          transition={{ duration: timeDuration, delay: 0.25 }}
+          href="https://github.com/JairoLopes"
+          target="_blank"
+          className="hidden sm:flex flex-col hover:-translate-y-2 transition-all duration-700"
+        >
+          <FaGithub className="text-4xl text-mainTheme hover:text-secondaryTheme transition-colors duration-1000" />
+        </motion.a>
+      </div>
     </section>
   );
 };

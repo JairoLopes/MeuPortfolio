@@ -118,6 +118,19 @@ const MobileMenu = (props: navProps) => {
       >
         Github
       </a>
+
+      {/* Linkedin */}
+      <a
+        href="https://www.linkedin.com/in/jairo-lopes-09a4b7359/"
+        onClick={() => props.setMenuOpen(false)}
+        className={`block sm:hidden text-2xl font-semibold text-white mt-4 transform transition-transform duration-800 ${
+          props.menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-32"
+        }`}
+      >
+        Linkedin
+      </a>
     </div>
   );
 };
