@@ -7,7 +7,7 @@ const Projects = () => {
       nome: "Site Personal",
       desc: "Landing page de portfólio e contratação de personal trainer",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
-      link_projeto: "https://tallespersonal.vercel.app/",
+      link_projeto: "https://talles-personal.vercel.app/",
       finish: true,
     },
     {
