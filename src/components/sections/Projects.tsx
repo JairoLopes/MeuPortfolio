@@ -4,6 +4,13 @@ import { slideUpFadeIn } from "../../animations";
 const Projects = () => {
   const data_projects = [
     {
+      nome: "E-commerce - Nuphar",
+      desc: "Uma plataforma de e-comerce para venda algas marinhas para aquarismo",
+      tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+      link_projeto: "https://nuphar.vercel.app/",
+      finish: true,
+    },
+    {
       nome: "Site Personal",
       desc: "Landing page de portfólio e contratação de personal trainer",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
@@ -11,15 +18,8 @@ const Projects = () => {
       finish: true,
     },
     {
-      nome: "Gerador de senhas customizável",
-      desc: "(EM BREVE) - Gerador de senhas fortes altamente customizável",
-      tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
-      link_projeto: "#",
-      finish: false,
-    },
-    {
-      nome: "Plataforma E-comerce",
-      desc: "(EM BREVE) - Front-end funcional de uma plataforma de e-comerce",
+      nome: "Plataforma de astronomia",
+      desc: "(EM DESENVOLVIMENTO)",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
       finish: false,
