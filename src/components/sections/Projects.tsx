@@ -5,7 +5,7 @@ const Projects = () => {
   const data_projects = [
     {
       nome: "E-commerce - Nuphar",
-      desc: "Uma plataforma de e-comerce para venda algas marinhas para aquarismo",
+      desc: "Front-end de uma plataforma de e-commerce para venda de algas marinhas para aquarismo",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://nuphar.vercel.app/",
       finish: true,
