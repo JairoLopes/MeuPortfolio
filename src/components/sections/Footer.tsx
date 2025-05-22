@@ -1,3 +1,5 @@
+import { FaGithub } from "react-icons/fa";
+
 const Footer = () => {
   const skillsFront = [
     {
@@ -43,8 +45,19 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Container que engloba o ícone do Github da página */}
+        <div className="flex flex-col items-center justify-center gap-4 py-4">
+          <h3 className="text-xl md:text-3xl mb-3 text-myWhite/80">
+            Código da página
+          </h3>
+          <a href="https://github.com/JairoLopes/MeuPortfolio" target="_blank">
+            {/* ÍCONE DO GITHUB */}
+            <FaGithub size={50} className="text-mainTheme" />
+          </a>
+        </div>
+
         {/* CONTAINER QUE ENGLOBA O NOME DO DESENVOLVEDOR */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <span className="text-myWhite">
             Desenvolvido por <strong>Jairo Lopes</strong>
           </span>

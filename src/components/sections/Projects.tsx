@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { slideUpFadeIn } from "../../animations";
+import { FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const data_projects = [
@@ -8,6 +9,7 @@ const Projects = () => {
       desc: "Front-end de uma plataforma de e-commerce para venda de algas marinhas para aquarismo",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://nuphar.vercel.app/",
+      github: "https://github.com/JairoLopes/Ecommerce",
       finish: true,
     },
     {
@@ -15,6 +17,7 @@ const Projects = () => {
       desc: "Landing page de portfólio e contratação de personal trainer",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://talles-personal.vercel.app/",
+      github: "https://github.com/JairoLopes/personal_trainer",
       finish: true,
     },
     {
@@ -22,6 +25,7 @@ const Projects = () => {
       desc: "(EM DESENVOLVIMENTO)",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
+      github: "",
       finish: false,
     },
   ];
@@ -53,7 +57,7 @@ const Projects = () => {
               whileInView={slideUpFadeIn.animate}
               transition={{ delay: index * 0.2 }}
               key={index}
-              className="flex flex-col gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3
+              className="relative flex flex-col gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3
              hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme
               transition-all duration-500"
             >
@@ -71,7 +75,7 @@ const Projects = () => {
                   Tecnologias usadas:
                 </h2>
 
-                {/* Aqui irá são as tecnologias usadas que serão renderizadas dentro de uma span */}
+                {/* Aqui são as tecnologias usadas que serão renderizadas dentro de uma span */}
                 {i.tech_usadas.map((tech, index) => (
                   <span
                     key={index}
@@ -83,8 +87,9 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/*Container parar ver projeto */}
-              <div className="flex items-center  gap-5 mt-6">
+              {/*Container parar ver projeto e Github*/}
+              <div className="flex justify-between items-center mt-6">
+                {/* Link para ver projeto */}
                 <a
                   href={`${i.link_projeto}`}
                   target="_blank"
@@ -95,6 +100,17 @@ const Projects = () => {
                 >
                   Ver Projeto
                   <i className="bx bx-right-arrow-circle text-2xl text-myWhite"></i>
+                </a>
+
+                {/* Link para o Github */}
+                <a
+                  className={`${
+                    i.finish ? "block" : "hidden"
+                  } flex flex-col gap-2 items-center`}
+                  href={`${i.github}`}
+                  target="_blank"
+                >
+                  <FaGithub size={30} className="" />
                 </a>
               </div>
             </motion.div>

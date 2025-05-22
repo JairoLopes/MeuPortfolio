@@ -22,7 +22,7 @@ function App() {
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       <div
         /* Se isloaded for true, exibe(opacity-100) todos os componentes dentro desta div, se for false, recebe opacidade 0*/
-        className={`min-h-screen bg-[] transition-opacity duration-700 ${
+        className={`overflow-x-hidden min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-deepBlue text-myWhite`}
       >
