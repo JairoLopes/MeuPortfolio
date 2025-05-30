@@ -5,6 +5,21 @@ import { FaGithub } from "react-icons/fa";
 const Projects = () => {
   const data_projects = [
     {
+      nome: "Astrolobby",
+      desc: "Plataforma web para exploração astronômica, atuando como um hub de notícias e conteúdo educativo. Integra informações oficiais da NASA conectando a API APOD, e oferece tradução instantânea para o português conectando uma segunda API(DeepL).",
+      tech_usadas: [
+        "React",
+        "Tailwind CSS",
+        "Typescript",
+        "Framer Motion",
+        "API Rest",
+        "React router",
+      ],
+      link_projeto: "https://astrolobby.vercel.app/",
+      github: "https://github.com/JairoLopes/Astrolobby",
+      finish: true,
+    },
+    {
       nome: "E-commerce - Nuphar",
       desc: "Front-end de uma plataforma de e-commerce para venda de algas marinhas para aquarismo",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
@@ -21,7 +36,7 @@ const Projects = () => {
       finish: true,
     },
     {
-      nome: "Plataforma de astronomia",
+      nome: "E-commerce",
       desc: "(EM DESENVOLVIMENTO)",
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
@@ -66,10 +81,10 @@ const Projects = () => {
                 {i.nome}
               </h3>
               {/* DESCRIÇÃO DO PROJETO */}
-              <p className="mb-4">{i.desc}</p>
+              <p className="mb-4 min-h-[120px] flex items-center">{i.desc}</p>
 
               {/* Container onde ficam as techs utilizadas no projeto */}
-              <div className="">
+              <div className="min-h-[88px]">
                 {/* Titulo tecnologias usadas */}
                 <h2 className="text-mainTheme text-lg font-bold mb-3">
                   Tecnologias usadas:
