@@ -8,14 +8,14 @@ const exp = [
     titulo: "Desenvolvedor React",
     empresa: "Freelancer",
     desc: "Desenvolvimento de interfaces web responsivas utilizando React e Tailwind para a criação de componentes reutilizáveis para diferentes dispositivos.",
-    ano: "2024",
+    ano: "2025",
     direction: "left", // Direção em que o card será exibido (esquerda)
   },
   {
     titulo: "Programador Front-end",
     empresa: "Prefeitura de Olinda",
     desc: "Realização de ajustes e melhorias no front-end de sistemas corporativos.",
-    ano: "2021",
+    ano: "2022",
     direction: "right", // Direção em que o card será exibido (direita)
   },
   {
