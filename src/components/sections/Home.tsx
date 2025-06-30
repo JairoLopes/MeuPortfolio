@@ -95,7 +95,7 @@ const Home = () => {
           initial={slideRight.initial}
           whileInView={slideRight.animate}
           transition={{ duration: timeDuration, delay: 0.25 }}
-          href="https://www.linkedin.com/in/jairo-lopes-09a4b7359/"
+          href="https://www.linkedin.com/in/jairo-lopes-filho/"
           target="_blank"
           className="hidden sm:flex flex-col hover:-translate-y-2 transition-all duration-700"
         >

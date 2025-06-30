@@ -121,7 +121,7 @@ const MobileMenu = (props: navProps) => {
 
       {/* Linkedin */}
       <a
-        href="https://www.linkedin.com/in/jairo-lopes-09a4b7359/"
+        href="https://www.linkedin.com/in/jairo-lopes-filho/"
         onClick={() => props.setMenuOpen(false)}
         className={`block sm:hidden text-2xl font-semibold text-white mt-4 transform transition-transform duration-800 ${
           props.menuOpen
