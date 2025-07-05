@@ -5,6 +5,14 @@ import { FaGithub } from "react-icons/fa";
 const Projects = () => {
   const data_projects = [
     {
+      nome: "Tidetrack",
+      desc: "Plataforma web para monitoramento marítimo global. Ele exibe dados em tempo real sobre a altura, temperatura e direção das ondas, além do nível do mar. Conecta-se à API Marine Weather da Open-Meteo para os dados marítimos e à API Nominatim da OpenStreetMap para informações de localização e busca no mapa.",
+      tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+      link_projeto: "https://tidetrack-sea.vercel.app/",
+      github: "https://github.com/JairoLopes/Tidetrack",
+      finish: true,
+    },
+    {
       nome: "Astrolobby",
       desc: "Plataforma web para exploração astronômica, atuando como um hub de notícias e conteúdo educativo. Integra informações oficiais da NASA conectando a API APOD, e oferece tradução instantânea para o português conectando uma segunda API(DeepL).",
       tech_usadas: [
@@ -81,7 +89,7 @@ const Projects = () => {
                 {i.nome}
               </h3>
               {/* DESCRIÇÃO DO PROJETO */}
-              <p className="mb-4 min-h-[120px] flex items-center">{i.desc}</p>
+              <p className="mb-4 min-h-[168px] flex items-center">{i.desc}</p>
 
               {/* Container onde ficam as techs utilizadas no projeto */}
               <div className="min-h-[88px]">
