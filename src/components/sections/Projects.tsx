@@ -1,15 +1,27 @@
 import { motion } from "framer-motion";
 import { slideUpFadeIn } from "../../animations";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaInfoCircle } from "react-icons/fa";
+import { useState } from "react";
 
 const Projects = () => {
+  const [activeTooltipIndex, setActiveTooltipIndex] = useState<number | null>(
+    null
+  );
+
   const data_projects = [
     {
       nome: "Tidetrack",
       desc: "Plataforma web para monitoramento marítimo global. Ele exibe dados em tempo real sobre a altura, temperatura e direção das ondas, além do nível do mar. Conecta-se à API Marine Weather da Open-Meteo para os dados marítimos e à API Nominatim da OpenStreetMap para informações de localização e busca no mapa.",
-      tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+      tech_usadas: [
+        "React",
+        "Tailwind CSS",
+        "Typescript",
+        "Framer Motion",
+        "API Rest",
+      ],
       link_projeto: "https://tidetrack-sea.vercel.app/",
       github: "https://github.com/JairoLopes/Tidetrack",
+      real: true,
       finish: true,
     },
     {
@@ -25,6 +37,7 @@ const Projects = () => {
       ],
       link_projeto: "https://astrolobby.vercel.app/",
       github: "https://github.com/JairoLopes/Astrolobby",
+      real: true,
       finish: true,
     },
     {
@@ -33,6 +46,7 @@ const Projects = () => {
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://nuphar.vercel.app/",
       github: "https://github.com/JairoLopes/Ecommerce",
+      real: false,
       finish: true,
     },
     {
@@ -41,6 +55,7 @@ const Projects = () => {
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "https://talles-personal.vercel.app/",
       github: "https://github.com/JairoLopes/personal_trainer",
+      real: true,
       finish: true,
     },
     {
@@ -49,9 +64,14 @@ const Projects = () => {
       tech_usadas: ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
       link_projeto: "#",
       github: "",
+      real: true,
       finish: false,
     },
   ];
+
+  const handleTooltipToggle = (index: number) => {
+    setActiveTooltipIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
     <section
@@ -84,10 +104,58 @@ const Projects = () => {
              hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme
               transition-all duration-500"
             >
-              {/* TITULO DO PROJETO */}
-              <h3 className="text-xl font-bold mb-2 text-secondaryTheme">
-                {i.nome}
-              </h3>
+              {/* CONTAINER PARA TITULO DO PROJETO + ICONE INFO */}
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold mb-2 text-secondaryTheme">
+                  {i.nome}
+                </h3>
+                {i.real ? (
+                  <div
+                    className="relative cursor-pointer"
+                    onClick={() => handleTooltipToggle(index)}
+                  >
+                    <FaInfoCircle size={22} className="text-mainTheme" />
+                    {/* Alteração aqui: Controle de opacidade com base no estado */}
+                    {activeTooltipIndex === index && (
+                      <span
+                        className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+                                   bg-emerald-600 text-white font-semibold text-sm rounded py-2 px-3
+                                   transition-opacity duration-300 whitespace-nowrap z-10
+                                   ${
+                                     activeTooltipIndex === index
+                                       ? "opacity-100"
+                                       : "opacity-0"
+                                   }`} // Controla opacidade com base no estado
+                      >
+                        Projeto Real
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    className="relative cursor-pointer"
+                    onClick={() => handleTooltipToggle(index)}
+                  >
+                    <FaInfoCircle size={22} className="text-mainTheme" />
+                    {/* Alteração aqui: Controle de opacidade com base no estado */}
+                    {activeTooltipIndex === index && (
+                      <span
+                        className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+                                   bg-thirdTheme text-white text-sm font-semibold rounded py-2 px-3
+                                   transition-opacity duration-300 whitespace-nowrap z-10
+                                   ${
+                                     activeTooltipIndex === index
+                                       ? "opacity-100"
+                                       : "opacity-0"
+                                   }`} // Controla opacidade com base no estado
+                      >
+                        Projeto Simulado
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+
               {/* DESCRIÇÃO DO PROJETO */}
               <p className="mb-4 min-h-[168px] flex items-center">{i.desc}</p>
 
@@ -99,15 +167,21 @@ const Projects = () => {
                 </h2>
 
                 {/* Aqui são as tecnologias usadas que serão renderizadas dentro de uma span */}
-                {i.tech_usadas.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-thirdTheme/10 text-thirdTheme py-1 px-3
-                rounded-full text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {" "}
+                  {/* flex-wrap para as tags quebrarem a linha */}
+                  {i.tech_usadas.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className={`${
+                        i.finish === false && `blur-sm opacity-40`
+                      } bg-thirdTheme/10 text-thirdTheme py-1 px-3
+                                 rounded-full text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/*Container parar ver projeto e Github*/}
@@ -116,9 +190,12 @@ const Projects = () => {
                 <a
                   href={`${i.link_projeto}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center gap-2 font-semibold border-b-2 pb-1 border-secondaryTheme
                    text-mainTheme hover:text-mainTheme/80 transition-colors duration-500 ${
-                     i.finish ? "cursor-pointer" : "hidden"
+                     i.finish
+                       ? "cursor-pointer"
+                       : "opacity-30 pointer-events-none"
                    }`}
                 >
                   Ver Projeto
@@ -132,6 +209,7 @@ const Projects = () => {
                   } flex flex-col gap-2 items-center`}
                   href={`${i.github}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FaGithub size={30} className="" />
                 </a>

@@ -40,7 +40,13 @@ const Home = () => {
             initial={pulseIn.initial}
             whileInView={pulseIn.animate}
             transition={{ duration: 2, delay: 0.8 }}
-            texto="Desenvolvedor Front-End"
+            textos={[
+              "Desenvolvedor Front-End",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "JavaScript",
+            ]}
             classesTw="text-myWhite font-semibold text-xl text-secondaryTheme sm:text-3xl mb-8 max-w-lg mx-auto min-h-[30px]"
             classeCursor="font-medium text-myWhite"
           />

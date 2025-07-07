@@ -1,32 +1,60 @@
 import { useState, useEffect, forwardRef } from "react";
 
 interface DigitandoProps {
-  texto: string;
+  textos: string[]; // Agora 'textos' é um array de strings
   classesTw?: string; // Estilização do texto
   classeCursor?: string; // Estilização do cursor
 }
 
 const Digitando = forwardRef<HTMLHeadingElement, DigitandoProps>(
-  ({ texto, classesTw = "", classeCursor = "" }, ref) => {
-    const [index, setIndex] = useState(0);
+  ({ textos, classesTw = "", classeCursor = "" }, ref) => {
+    const [indexTextoAtual, setIndexTextoAtual] = useState(0); // Índice do texto no array 'textos'
+    const [indexCaractere, setIndexCaractere] = useState(0); // Índice do caractere dentro do texto atual
     const [deletando, setDeletando] = useState(false);
     const [mostrarCursor, setMostrarCursor] = useState(true);
 
+    const textoAtual = textos[indexTextoAtual];
+
     useEffect(() => {
-      const velocidade = deletando ? 30 : 80;
-      const pausa = index === texto.length ? 2000 : index === 0 ? 500 : 0;
+      const velocidadeDigitar = 80;
+      const velocidadeDeletar = 40; // Um pouco mais rápido para deleção
+      const pausaNoFinalDigitar = 2000; // Pausa após digitar o texto completo
+      const pausaNoFinalDeletar = 500; // Pausa após deletar o texto, antes de começar o próximo
 
-      const timeout = setTimeout(() => {
-        setIndex((prev) => (deletando ? prev - 1 : prev + 1));
+      let timeout: ReturnType<typeof setTimeout>; // Correção na tipagem aqui
 
-        if (index === texto.length) setDeletando(true);
-        if (index === 0 && deletando) setDeletando(false);
-      }, velocidade + pausa);
+      if (deletando) {
+        // Lógica para deletar
+        if (indexCaractere > 0) {
+          timeout = setTimeout(() => {
+            setIndexCaractere((prev) => prev - 1);
+          }, velocidadeDeletar);
+        } else {
+          // Terminou de deletar o texto atual
+          timeout = setTimeout(() => {
+            setDeletando(false); // Seta para começar a digitar
+            setIndexTextoAtual((prev) => (prev + 1) % textos.length); // Próximo texto
+          }, pausaNoFinalDeletar);
+        }
+      } else {
+        // Lógica para digitar
+        if (indexCaractere < textoAtual.length) {
+          timeout = setTimeout(() => {
+            setIndexCaractere((prev) => prev + 1);
+          }, velocidadeDigitar);
+        } else {
+          // Terminou de digitar o texto atual
+          timeout = setTimeout(() => {
+            setDeletando(true); // Seta para começar a deletar
+          }, pausaNoFinalDigitar);
+        }
+      }
 
       return () => clearTimeout(timeout);
-    }, [index, deletando, texto]);
+    }, [indexCaractere, deletando, textoAtual, textos.length, indexTextoAtual]); // Dependências completas
 
     useEffect(() => {
+      // Lógica para piscar o cursor
       const intervalo = setInterval(
         () => setMostrarCursor((prev) => !prev),
         500
@@ -36,7 +64,8 @@ const Digitando = forwardRef<HTMLHeadingElement, DigitandoProps>(
 
     return (
       <h1 ref={ref} className={classesTw}>
-        {index > 0 || deletando ? texto.slice(0, index) : ""}
+        {/* Exibe o texto cortado até o indexCaractere */}
+        {textoAtual.slice(0, indexCaractere)}
         <span
           className={`${classeCursor} inline-block w-[0.5ch]`}
           style={{ opacity: mostrarCursor ? 1 : 0 }}
