@@ -18,9 +18,32 @@ const Home = () => {
   return (
     <section
       id="home"
-      className={`min-h-screen flex items-center justify-center relative
-      sm:bg-[linear-gradient(to_right,rgb(5,5,20,0.9),rgb(5,5,20,0.9)),url('/img/tech3.jpg')] bg-no-repeat bg-fixed bg-cover`}
+      className="min-h-screen flex items-center justify-center relative z-20"
     >
+      {/* --------- VIDEOS PARA BACKGROUND --------------------- */}
+      {/* Video para desktop */}
+      <video
+        className="hidden sm:block absolute inset-0 w-full h-full object-cover -z-10"
+        autoPlay
+        loop
+        muted
+        src="/video/bg5.mp4"
+      />
+
+      {/* Video para mobile */}
+      <video
+        className="block sm:hidden absolute inset-0 w-full h-full object-cover -z-10"
+        autoPlay
+        loop
+        muted
+        src="/video/bg_mobile1.mp4"
+      />
+
+      {/* Criando camada overlay para melhorar a legibilidade do texto */}
+      <div className="absolute inset-0 bg-deepBlue opacity-70 sm:opacity-88 -z-10"></div>
+
+      {/* -------- FIM DO BLOCO DE VIDEOS PARA BACKGROUND ------- */}
+
       {/* Sub-container que engloba toda a home */}
       <div className="text-center z-10 px-4">
         {/* Titulo Meu Nome */}
