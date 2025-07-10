@@ -82,7 +82,8 @@ const About = () => {
             <strong className="strong2">redes de computadores</strong>, {""}
             <strong className="strong2">especializado</strong> em {""}
             <strong className="strong2">desenvolvimento web</strong>, com foco
-            em <strong className="strong2">React</strong>,{" "}
+            em <strong className="strong2">Vue.js</strong>,{" "}
+            <strong className="strong2">React</strong>,{" "}
             <strong className="strong2">Tailwind CSS</strong> e{" "}
             <strong className="strong2">Typescript</strong>, criando interfaces
             elegantes, responsivas e de alto desempenho, desenvolvendo

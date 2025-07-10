@@ -5,9 +5,9 @@ import { slideUpFadeIn, growIn } from "../../animations";
 // Dados da experiência profissional
 const exp = [
   {
-    titulo: "Desenvolvedor React",
+    titulo: "Desenvolvedor Front-end",
     empresa: "Freelancer",
-    desc: "Desenvolvimento de interfaces web responsivas utilizando React e Tailwind para a criação de componentes reutilizáveis para diferentes dispositivos.",
+    desc: "Desenvolvimento de interfaces web responsivas utilizando Vue.js, React e Tailwind para a criação de componentes reutilizáveis para diferentes dispositivos.",
     ano: "2025",
     direction: "left", // Direção em que o card será exibido (esquerda)
   },
