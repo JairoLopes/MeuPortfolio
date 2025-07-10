@@ -1,24 +1,35 @@
 import { easeInOut, motion } from "framer-motion";
 import { slideUpFadeIn, growIn } from "../../animations";
 
+import { FaReact } from "react-icons/fa";
+import { IoLogoVue } from "react-icons/io5";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+
 const About = () => {
+  const sizeIcons = 45;
   const skillsFront = [
     {
-      tech: "React",
-      icon: "bx bxl-react",
+      tech: "Vue.js",
+      icon: <IoLogoVue size={sizeIcons} className="text-thirdTheme" />,
     },
     {
-      tech: "TypeScript",
-      icon: "bx bxl-typescript",
+      tech: "React",
+      icon: <FaReact size={sizeIcons} className="text-mainTheme" />,
+    },
+    {
+      tech: "Typescript",
+      icon: <SiTypescript size={sizeIcons} className="text-blue-500" />,
     },
     {
       tech: "Tailwind CSS",
-      icon: "bx bxl-tailwind-css",
+      icon: <RiTailwindCssFill size={sizeIcons} className="text-sky-400" />,
     },
 
     {
       tech: "JavaScript",
-      icon: "bx bxl-javascript",
+      icon: <IoLogoJavascript size={sizeIcons} className="text-yellow-500" />,
     },
   ];
 
@@ -89,7 +100,7 @@ const About = () => {
               </h3>
 
               {/* Container que engloba todas as skills*/}
-              <div className="flex justify-center items-center flex-wrap gap-10">
+              <div className="flex justify-center items-center flex-wrap gap-10 pt-7">
                 {/* Irá iterar o array de skills e estiliza-las cada uma nessa span */}
                 {skillsFront.map((skill, index) => (
                   /* Conteiner onde fica armzenado o icone do boxicons e a span com o nome da tecnologia */
@@ -100,7 +111,7 @@ const About = () => {
                     transition={{ delay: index * 0.2 }}
                     className="flex flex-col items-center justify-center gap-2 hover:scale-95 active:scale-95 transition-all duration-500"
                   >
-                    <i className={`${skill.icon} text-5xl text-mainTheme`}></i>
+                    {skill.icon}
                     <span className="font-semibold text-myWhite">
                       {skill.tech}
                     </span>

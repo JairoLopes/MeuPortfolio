@@ -40,7 +40,7 @@ const Home = () => {
       />
 
       {/* Criando camada overlay para melhorar a legibilidade do texto */}
-      <div className="absolute inset-0 bg-deepBlue opacity-70 sm:opacity-88 -z-10"></div>
+      <div className="absolute inset-0 bg-deepBlue opacity-60 sm:opacity-88 -z-10"></div>
 
       {/* -------- FIM DO BLOCO DE VIDEOS PARA BACKGROUND ------- */}
 
@@ -65,6 +65,8 @@ const Home = () => {
             transition={{ duration: 2, delay: 0.8 }}
             textos={[
               "Desenvolvedor Front-End",
+              "Vue.js",
+              "Pinia",
               "React",
               "TypeScript",
               "Tailwind CSS",
@@ -81,6 +83,7 @@ const Home = () => {
             className="text-gray-300 text-start sm:text-center sm:text-lg max-w-2xl mx-auto"
           >
             Desenvolvedor Frontend com foco em{" "}
+            <strong className="strong2">Vue.js</strong>,{" "}
             <strong className="strong2">React</strong>,{" "}
             <strong className="strong2">Tailwind CSS</strong> e{" "}
             <strong className="strong2">TypeScript</strong>.<br />
