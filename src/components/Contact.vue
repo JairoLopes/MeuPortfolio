@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import emailjs from '@emailjs/browser'
+import { scaleIn } from '@/animation'
 
 // Estado reativo para os campos do formulário
 const nome = ref('')
@@ -59,11 +60,17 @@ watch(enviado, (novoValor) => {
     <!-- Div que engloba todo o CONTACT -->
     <div class="relative px-4 w-150">
       <!-- TITULO -->
-      <h2 class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text">Contato</h2>
+      <h2
+        v-motion
+        :variants="scaleIn"
+        class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
+      >
+        Contato
+      </h2>
 
       <form @submit="handleSubmit" class="space-y-6">
         <!-- CONTAINER ONDE FICA O INPUT DE NOME -->
-        <div class="relative">
+        <div v-motion :variants="scaleIn" class="relative">
           <input
             type="text"
             id="name"
@@ -76,7 +83,7 @@ watch(enviado, (novoValor) => {
         </div>
 
         <!-- CONTAINER ONDE FICA O INPUT DE EMAIL -->
-        <div class="relative">
+        <div v-motion :variants="scaleIn" class="relative">
           <input
             type="email"
             id="email"
@@ -89,7 +96,7 @@ watch(enviado, (novoValor) => {
         </div>
 
         <!-- CONTAINER ONDE FICA A TEXTAREA -->
-        <div class="relative">
+        <div v-motion :variants="scaleIn" class="relative">
           <textarea
             id="msg"
             name="msg"
@@ -101,7 +108,7 @@ watch(enviado, (novoValor) => {
           />
         </div>
 
-        <button type="submit" class="w-full btn-submit">Enviar</button>
+        <button v-motion :variants="scaleIn" type="submit" class="w-full btn-submit">Enviar</button>
       </form>
 
       <!-- Renderiza a mensagem de sucesso caso o formulário tenha sido enviado -->

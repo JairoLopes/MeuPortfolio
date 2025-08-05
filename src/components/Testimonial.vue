@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
+import { scaleIn } from '@/animation'
 
 // Array de dados dos depoimentos
 const depoimentos = ref([
@@ -54,14 +55,20 @@ const carouselSettings = {
     <!-- Container dos depoimentos -->
     <div class="max-w-4xl mx-auto px-4 w-full">
       <!-- Título -->
-      <h2 class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center">Depoimentos</h2>
+      <h2
+        v-motion
+        :variants="scaleIn"
+        class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
+      >
+        Depoimentos
+      </h2>
 
-      <p class="text-center font-semibold sm:text-lg mb-6 sm:mb-14">
+      <p v-motion :variants="scaleIn" class="text-center font-semibold sm:text-lg mb-6 sm:mb-14">
         Segue abaixo a opnião de alguns clientes e/ou colegas de trabalho.
       </p>
 
       <!-- Uso do Carousel para renderizar os depoimentos -->
-      <Carousel v-bind="carouselSettings">
+      <Carousel v-motion :variants="scaleIn" v-bind="carouselSettings">
         <Slide v-for="(item, index) in depoimentos" :key="index">
           <!-- Container individual de cada depoimento -->
           <div
