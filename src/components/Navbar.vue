@@ -1,10 +1,12 @@
 <template>
+  <!-- border-t border-mainTheme/20 shadow-2xl shadow-mainTheme -->
   <nav
     :class="[
-      isScrolling ? 'bg-navBlack' : 'bg-transparent',
-      'fixed top-0 w-full z-40 border-white/10',
+      isScrolling ? 'bg-navBlack border-b-1 border-blue-800/20' : 'bg-transparent',
+      'fixed top-0 w-full z-40',
     ]"
   >
+    <!-- CONTAINER QUE ENGLOBA TODA NAVBAR -->
     <div class="max-w-5xl mx-auto px-4 p-3">
       <div class="flex justify-between items-center h-16">
         <!-- LOGO NOME -->
@@ -12,7 +14,7 @@
           <span class="block text-mainTheme animate-bounce text-2xl"><</span>
           <p class="animate-pulse">Portfólio</p>
           <span
-            class="block text-secondaryTheme text-2xl animate-bounce"
+            class="block text-thirdTheme text-2xl animate-bounce"
             style="animation-delay: 500ms"
           >
             />
@@ -120,14 +122,20 @@ import { throttle } from 'lodash'
 
 const isScrolling = ref(false)
 
-function handleScroll() {
+// Crie a função que será 'throttled'
+const handleScroll = throttle(() => {
   isScrolling.value = window.scrollY > 0
-}
-
-const myThrottle = throttle(handleScroll, 300)
+  console.log("Ativando função que atualiza o 'isScrolling'")
+}, 500)
 
 onMounted(() => {
-  window.addEventListener('scroll', myThrottle)
+  // Adicione o 'event listener' com a função 'throttled'
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  // Remova o 'event listener' no 'unmounted'
+  window.removeEventListener('scroll', handleScroll)
 })
 
 // Define as propriedades (props) que este componente pode receber.
