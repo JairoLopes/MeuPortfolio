@@ -116,25 +116,35 @@
 </template>
 
 <script setup lang="ts">
-// Importa 'watch' para observar mudanças em propriedades reativas e 'ref' para estado.
 import { watch, onUnmounted, onMounted, ref } from 'vue'
 import { throttle } from 'lodash'
 
 const isScrolling = ref(false)
 
-// Crie a função que será 'throttled'
-const handleScroll = throttle(() => {
+// Define uma função para atualizar a variável isScrolling.
+const updateScrollingState = () => {
   isScrolling.value = window.scrollY > 0
   console.log("Ativando função que atualiza o 'isScrolling'")
+}
+
+// Crie a função que será 'throttled', mas só chame updateScrollingState se for tela grande.
+const handleScroll = throttle(() => {
+  // Use matchMedia para verificar se a tela é maior que 768px (o mesmo que md: do Tailwind).
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    updateScrollingState()
+  } else {
+    // Para telas pequenas, garanta que o estado de rolagem seja sempre falso para evitar a estilização.
+    isScrolling.value = false
+  }
 }, 500)
 
 onMounted(() => {
-  // Adicione o 'event listener' com a função 'throttled'
+  // Adicione o 'event listener' com a função 'throttled'.
   window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
-  // Remova o 'event listener' no 'unmounted'
+  // Remova o 'event listener' no 'unmounted'.
   window.removeEventListener('scroll', handleScroll)
 })
 
