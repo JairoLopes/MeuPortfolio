@@ -52,12 +52,10 @@
           <div class="hidden md:flex flex-col gap-y-3">
             <!-- Círculo -->
             <div class="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"></div>
-            <div v-for="(item, index) in exp" :key="index">
+            <div v-motion :variants="popUp" v-for="(item, index) in exp" :key="index">
               <div class="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto">
                 <!-- Se a direção for LEFT -->
                 <div
-                  v-motion
-                  :variants="scaleInRight"
                   v-if="item.direction === 'left'"
                   class="flex flex-col items-center justify-center gap-y-2 rounded-xl mt-4 md:mt-0 md:mx-6 px-6 pt-2 pb-6 md:p-6 bg-mainTheme/6 md:shadow-2xl md:hover:shadow-none shadow-mainTheme hover:-translate-y-2 transition-all duration-700 border-2 border-mainTheme/10"
                 >
@@ -87,8 +85,6 @@
 
                 <!-- Se a direção for RIGHT -->
                 <div
-                  v-motion
-                  :variants="scaleInLeft"
                   v-if="item.direction === 'right'"
                   class="flex flex-col items-center justify-center gap-y-2 rounded-xl mt-4 md:mt-0 md:mx-6 px-6 pt-2 pb-6 md:p-6 bg-mainTheme/6 md:shadow-2xl md:hover:shadow-none shadow-mainTheme hover:-translate-y-2 transition-all duration-700 border-2 border-mainTheme/10"
                 >
@@ -120,7 +116,7 @@
 </template>
 
 <script setup lang="ts">
-import { slideUp, scaleInLeft, scaleInRight, scaleIn } from '@/animation'
+import { slideUp, scaleInLeft, scaleInRight, scaleIn, popUp } from '@/animation'
 
 // Array de dados da experiência profissional
 const exp = [

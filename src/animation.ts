@@ -25,7 +25,11 @@ export const fadeIn = {
 // Animação de entrada subindo
 export const slideUp = {
   initial: { y: 50, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { type: 'spring', duration: 1000, delay: 200 } },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'spring', duration: 400, stiffness: 150, damping: 10 },
+  },
 }
 
 // --- NOVAS ANIMAÇÕES ---

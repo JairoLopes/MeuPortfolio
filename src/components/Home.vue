@@ -71,12 +71,12 @@
       <!-- CONTAINER ONDE FICA OS LINKS DE VER PROJETOS E CONTATO -->
       <div class="flex justify-center items-center space-x-4">
         <!-- PROJETOS LINK -->
-        <a href="#projects" class="btn-hover2" v-motion :variants="slideInLeft">
+        <a href="#projects" class="btn-hover2" v-motion :variants="popUp">
           <span class="relative z-10"><span class="max-ssm:hidden">Ver</span> Projetos</span>
         </a>
 
         <!-- CONTATO LINK -->
-        <a href="#contact" class="btn-hover" v-motion :variants="slideInRight">
+        <a href="#contact" class="btn-hover" v-motion :variants="popUp">
           <span class="relative z-10">Contato</span>
         </a>
       </div>
@@ -121,5 +121,5 @@
 
 <script setup lang="ts">
 import Digitando from '@/components/Digitando.vue'
-import { scaleIn, slideUp, slideInRight, slideInLeft, scaleInLeft, scaleInRight } from '@/animation'
+import { scaleIn, slideUp, scaleInLeft, scaleInRight, popUp } from '@/animation'
 </script>

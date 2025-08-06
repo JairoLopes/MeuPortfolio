@@ -14,9 +14,10 @@
       <!-- Container que engloba os cards do projeto -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Iteração do objeto que da valor ao card para renderiza-lo -->
+        <!-- Se isMobile for true, renderiza o card sem animaçao -->
         <div
           v-motion
-          :variants="scaleIn"
+          :variants="popUp"
           v-for="(item, index) in data_projects"
           :key="index"
           id="cardUniq"
@@ -95,8 +96,34 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { scaleIn } from '@/animation'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { popUp, scaleIn } from '@/animation'
+import { throttle } from 'lodash'
+
+const isMobile = ref(false) // Estado reativo para controlar se a tela é mobile
+
+// Função para verificar se a tela é mobile
+const handleMobile = () => {
+  // se a largura da tela for menor que 700px, define isMobile como true
+  isMobile.value = window.innerWidth < 700
+}
+
+// função para limitar a chamada da funcao handleMobile, para a cada 500ms
+const _handleMobile = throttle(handleMobile, 500)
+
+// Hook 'onMounted' para executar a funcao 'handleMobile' quando o componente é montado
+onMounted(() => {
+  // Execute a função imediatamente para definir o valor inicial de isMobile
+  handleMobile()
+  // Ativa o listener para detectar mudanças na largura da tela e aplicar a funcao
+  window.addEventListener('resize', _handleMobile)
+  console.log('executou!! valor de isMobile agora é', isMobile.value)
+})
+
+// Hook 'onUnmounted' para desativar o listener quando o componente é desmontado
+onUnmounted(() => {
+  window.removeEventListener('resize', _handleMobile)
+})
 
 // Array de dados dos projetos
 const data_projects = [

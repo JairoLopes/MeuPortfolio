@@ -41,7 +41,7 @@ const githubIcon = 'io-logo-github'
               class="flex flex-col justify-center items-center text-mainTheme"
             >
               <v-icon :name="skill.icon" scale="2.2" />
-              <span class="text-xs font-semibold text-myWhite/50 mt-1">
+              <span class="text-[14px] font-semibold text-myWhite/50 mt-1">
                 {{ skill.tech }}
               </span>
             </span>
@@ -57,7 +57,7 @@ const githubIcon = 'io-logo-github'
             rel="noopener noreferrer"
             class="hover:scale-110 transition-transform duration-300"
           >
-            <v-icon :name="githubIcon" scale="2" class="text-mainTheme" />
+            <v-icon :name="githubIcon" scale="2" class="text-thirdTheme" />
           </a>
         </div>
       </div>
@@ -67,7 +67,7 @@ const githubIcon = 'io-logo-github'
 
       <!-- Direitos Autorais e Nome do Desenvolvedor -->
       <div class="text-center text-sm">
-        <p class="mt-2 text-base md:text-lg font-semibold text-mainTheme">Jairo Lopes</p>
+        <p class="mt-2 text-base md:text-lg font-semibold text-thirdTheme">Jairo Lopes</p>
       </div>
     </div>
   </footer>
