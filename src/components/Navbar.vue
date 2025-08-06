@@ -1,5 +1,12 @@
 <template>
-  <nav class="bg-navBlack border-b-1 border-blue-900/10 fixed top-0 w-full z-40">
+  <!-- border-t border-mainTheme/20 shadow-2xl shadow-mainTheme -->
+  <nav
+    :class="[
+      isScrolling ? 'bg-navBlack border-b-1 border-blue-800/20' : 'bg-transparent',
+      'fixed top-0 w-full z-40',
+    ]"
+  >
+    <!-- CONTAINER QUE ENGLOBA TODA NAVBAR -->
     <div class="max-w-5xl mx-auto px-4 p-3">
       <div class="flex justify-between items-center h-16">
         <!-- LOGO NOME -->
@@ -7,7 +14,7 @@
           <span class="block text-mainTheme animate-bounce text-2xl"><</span>
           <p class="animate-pulse">Portfólio</p>
           <span
-            class="block text-secondaryTheme text-2xl animate-bounce"
+            class="block text-thirdTheme text-2xl animate-bounce"
             style="animation-delay: 500ms"
           >
             />
@@ -109,6 +116,40 @@
 </template>
 
 <script setup lang="ts">
+import { watch, onUnmounted, onMounted, ref } from 'vue'
+import { throttle } from 'lodash'
+
+const isScrolling = ref(false)
+
+// Define uma função para atualizar a variável isScrolling.
+const updateScrollingState = () => {
+  isScrolling.value = window.scrollY > 0
+  /* console.log("Ativando função que atualiza o 'isScrolling'") */
+}
+
+// Crie a função que será 'throttled', mas só chame updateScrollingState se for tela grande.
+const handleScroll = throttle(() => {
+  // Use matchMedia para verificar se a tela é maior que 768px (o mesmo que md: do Tailwind).
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    updateScrollingState()
+  } else {
+    // Para telas pequenas, garanta que o estado de rolagem seja sempre falso para evitar a estilização.
+    isScrolling.value = false
+  }
+}, 500)
+
+onMounted(() => {
+  // Adicione o 'event listener' com a função 'throttled'.
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  // Remova o 'event listener' no 'unmounted'.
+  window.removeEventListener('scroll', handleScroll)
+})
+
+// Define as propriedades (props) que este componente pode receber.
+// 'menuOpen' é um booleano que indica se o menu mobile está aberto.
 const props = defineProps<{
   menuOpen: boolean
 }>()
@@ -116,6 +157,23 @@ const props = defineProps<{
 // Define os eventos que este componente pode emitir.
 // O evento 'update:menuOpen' é a convenção para uso com 'v-model' no componente pai.
 const emit = defineEmits(['update:menuOpen'])
+
+// O watcher observa a mudança na prop 'menuOpen'.
+// Se 'menuOpen' for 'true', ele define o overflow do body para 'hidden',
+// evitando que o usuário role a página enquanto o menu está aberto.
+// Quando 'menuOpen' se torna 'false', ele reseta o estilo.
+watch(
+  () => props.menuOpen,
+  (newValue) => {
+    document.body.style.overflow = newValue ? 'hidden' : ''
+  },
+)
+
+// Garante que o overflow seja resetado se o componente for desmontado,
+// o que é uma boa prática para evitar bugs inesperados.
+onUnmounted(() => {
+  document.body.style.overflow = ''
+})
 
 // Função para alternar o estado do menu mobile.
 // Emite o evento 'update:menuOpen' com o valor oposto de 'menuOpen'.
