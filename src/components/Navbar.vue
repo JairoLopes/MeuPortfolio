@@ -1,13 +1,8 @@
 <template>
   <!-- border-t border-mainTheme/20 shadow-2xl shadow-mainTheme -->
-  <nav
-    :class="[
-      isScrolling ? 'bg-navBlack border-b-1 border-blue-800/20' : 'bg-transparent',
-      'fixed top-0 w-full z-40',
-    ]"
-  >
+  <nav :class="[isScrolling ? 'bg-navBlack' : 'bg-transparent', 'fixed top-0 w-full z-40']">
     <!-- CONTAINER QUE ENGLOBA TODA NAVBAR -->
-    <div class="max-w-5xl mx-auto px-4 p-3">
+    <div class="max-w-5xl mx-auto px-4 py-1">
       <div class="flex justify-between items-center h-16">
         <!-- LOGO NOME -->
         <a id="logo" href="#home" class="flex gap-2 font-mono text-xl font-bold text-white">
