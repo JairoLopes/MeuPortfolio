@@ -124,7 +124,7 @@ const isScrolling = ref(false)
 // Define uma função para atualizar a variável isScrolling.
 const updateScrollingState = () => {
   isScrolling.value = window.scrollY > 0
-  console.log("Ativando função que atualiza o 'isScrolling'")
+  /* console.log("Ativando função que atualiza o 'isScrolling'") */
 }
 
 // Crie a função que será 'throttled', mas só chame updateScrollingState se for tela grande.
