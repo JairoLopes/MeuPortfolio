@@ -29,9 +29,13 @@
     <!-- Sub-container que engloba toda a home -->
     <div class="text-center z-10 px-4">
       <!-- Titulo Meu Nome -->
-      <h1 class="max-ssm:text-4xl text-5xl md:text-7xl font-bold mb-6 text-mainTheme">
+      <motion.h1
+        :initial="scaleIn.hidden"
+        :while-in-view="scaleIn.visible"
+        class="max-ssm:text-4xl text-5xl md:text-7xl font-bold mb-6 text-mainTheme"
+      >
         Jairo Lopes
-      </h1>
+      </motion.h1>
 
       <!-- Container de descrição e digitando -->
       <div id="description" class="mb-8">
@@ -51,33 +55,49 @@
           classeCursor="font-medium text-myWhite"
         />
 
-        <p class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto">
+        <motion.p
+          :initial="slideUp.hidden"
+          :while-in-view="slideUp.visible"
+          class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto"
+        >
           Desenvolvedor Frontend com foco em
           <strong class="strong2">Vue.js</strong>, <strong class="strong2">React</strong>,
           <strong class="strong2">Tailwind CSS</strong> e
           <strong class="strong2">TypeScript</strong>.<br />
           Utilizando ferramentas de <strong class="strong2">IA</strong> para otimização de código.
-        </p>
+        </motion.p>
       </div>
 
       <!-- CONTAINER ONDE FICA OS LINKS DE VER PROJETOS E CONTATO -->
       <div class="flex justify-center items-center space-x-4">
         <!-- PROJETOS LINK -->
-        <a href="#projects" class="btn-hover2">
+        <motion.a
+          :initial="slideInLeft.hidden"
+          :while-in-view="slideInLeft.visible"
+          href="#projects"
+          class="btn-hover2"
+        >
           <span class="relative z-10"><span class="max-ssm:hidden">Ver</span> Projetos</span>
-        </a>
+        </motion.a>
 
         <!-- CONTATO LINK -->
-        <a href="#contact" class="btn-hover">
+        <motion.a
+          :initial="slideInRight.hidden"
+          :while-in-view="slideInRight.visible"
+          href="#contact"
+          class="btn-hover"
+        >
           <span class="relative z-10">Contato</span>
-        </a>
+        </motion.a>
       </div>
     </div>
 
     <!-- CONTAINER DO Linkedin e GITHUB LINK -->
     <div class="flex justify-center items-center mt-15 gap-4">
       <!-- LINK DO LINKEDIN -->
-      <a
+      <motion.a
+        :initial="flipY.hidden"
+        :while-in-view="flipY.visible"
         href="https://www.linkedin.com/in/jairo-lopes-filho/"
         target="_blank"
         class="flex flex-col hover:-translate-y-2 transition-all duration-700"
@@ -88,10 +108,12 @@
           scale="2"
           class="text-thirdTheme/70 hover:text-thirdTheme transition-colors duration-1000"
         />
-      </a>
+      </motion.a>
 
       <!-- LINK DO GITHUB -->
-      <a
+      <motion.a
+        :initial="flipY.hidden"
+        :while-in-view="flipY.visible"
         href="https://github.com/JairoLopes"
         target="_blank"
         class="flex flex-col hover:-translate-y-2 transition-all duration-700"
@@ -102,12 +124,13 @@
           scale="2"
           class="text-thirdTheme/70 hover:text-thirdTheme transition-colors duration-1000"
         />
-      </a>
+      </motion.a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import Digitando from '@/components/Digitando.vue'
-import { scaleIn, slideUp, scaleInLeft, scaleInRight, popUp } from '@/animation'
+import { motion } from 'motion-v'
+import { scaleIn, slideUp, slideInLeft, slideInRight, flipY } from '@/animation'
 </script>

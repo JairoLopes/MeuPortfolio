@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
-import { scaleIn } from '@/animation'
+import { scaleIn, popUp } from '@/animation'
+import { motion } from 'motion-v'
 
 // Array de dados dos depoimentos
 const depoimentos = ref([
@@ -55,11 +56,21 @@ const carouselSettings = {
     <!-- Container dos depoimentos -->
     <div class="max-w-4xl mx-auto px-4 w-full">
       <!-- Título -->
-      <h2 class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center">Depoimentos</h2>
+      <motion.h2
+        :initial="scaleIn.hidden"
+        :while-in-view="scaleIn.visible"
+        class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
+      >
+        Depoimentos
+      </motion.h2>
 
-      <p class="text-center font-semibold sm:text-lg mb-6 sm:mb-14">
+      <motion.p
+        :initial="popUp.hidden"
+        :while-in-view="popUp.visible"
+        class="text-center font-semibold sm:text-lg mb-6 sm:mb-14"
+      >
         Segue abaixo a opnião de alguns clientes e/ou colegas de trabalho.
-      </p>
+      </motion.p>
 
       <!-- Uso do Carousel para renderizar os depoimentos -->
       <Carousel v-bind="carouselSettings">

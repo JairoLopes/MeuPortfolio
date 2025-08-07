@@ -3,13 +3,20 @@
     <!-- Container que engloba todo o projeto -->
     <div class="max-w-5xl mx-auto px-4">
       <!-- TITULO -->
-      <h2 class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text">Meus Projetos</h2>
+      <motion.h2
+        :initial="scaleIn.hidden"
+        :while-in-view="scaleIn.visible"
+        class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
+      >
+        Meus Projetos
+      </motion.h2>
 
       <!-- Container que engloba os cards do projeto -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Iteração do objeto que da valor ao card para renderiza-lo -->
-        <!-- Se isMobile for true, renderiza o card sem animaçao -->
-        <div
+        <motion.div
+          :initial="popUp.hidden"
+          :while-in-view="popUp.visible"
           v-for="(item, index) in data_projects"
           :key="index"
           id="cardUniq"
@@ -81,7 +88,7 @@
               <v-icon name="io-logo-github" scale="1.8" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   </section>
@@ -90,6 +97,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { popUp, scaleIn } from '@/animation'
+import { motion } from 'motion-v'
 
 // Array de dados dos projetos
 const data_projects = [

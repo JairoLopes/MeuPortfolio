@@ -5,13 +5,21 @@
   >
     <!-- Container que engloba experiência -->
     <div class="max-w-4xl mx-auto px-4">
-      <h3 class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center">
+      <motion.h3
+        :initial="scaleIn.hidden"
+        :while-in-view="scaleIn.visible"
+        class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
+      >
         Experiência Profissional
-      </h3>
+      </motion.h3>
 
-      <p class="text-center font-semibold">
+      <motion.p
+        :initial="slideUp.hidden"
+        :while-in-view="slideUp.visible"
+        class="text-center font-semibold"
+      >
         Segue abaixo um pouco do meu histórico profissional referente a área de tecnologia.
-      </p>
+      </motion.p>
 
       <!-- Container da timeline -->
       <div class="mt-12 sm:mt-26">
@@ -47,8 +55,19 @@
           <!-- Versão Desktop: utiliza grid para posicionar o evento à esquerda ou direita -->
           <div class="hidden md:flex flex-col gap-y-3">
             <!-- Círculo -->
-            <div class="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"></div>
-            <div v-for="(item, index) in exp" :key="index">
+            <motion.div
+              :initial="scaleIn.hidden"
+              :while-in-view="scaleIn.visible"
+              class="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"
+            ></motion.div>
+
+            <!-- Card do evento -->
+            <motion.div
+              :initial="popUp.hidden"
+              :while-in-view="popUp.visible"
+              v-for="(item, index) in exp"
+              :key="index"
+            >
               <div class="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto">
                 <!-- Se a direção for LEFT -->
                 <div
@@ -103,7 +122,7 @@
               </div>
               <!-- Círculo -->
               <div class="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"></div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -112,7 +131,8 @@
 </template>
 
 <script setup lang="ts">
-import { slideUp, scaleInLeft, scaleInRight, scaleIn, popUp } from '@/animation'
+import { motion } from 'motion-v'
+import { slideUp, scaleIn, popUp } from '@/animation'
 
 // Array de dados da experiência profissional
 const exp = [

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import emailjs from '@emailjs/browser'
-import { scaleIn } from '@/animation'
+import { scaleIn, popUp } from '@/animation'
+import { motion } from 'motion-v'
 
 // Estado reativo para os campos do formulário
 const nome = ref('')
@@ -60,11 +61,17 @@ watch(enviado, (novoValor) => {
     <!-- Div que engloba todo o CONTACT -->
     <div class="relative px-4 w-150">
       <!-- TITULO -->
-      <h2 class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text">Contato</h2>
+      <motion.h2
+        :initial="scaleIn.hidden"
+        :while-in-view="scaleIn.visible"
+        class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
+      >
+        Contato
+      </motion.h2>
 
       <form @submit="handleSubmit" class="space-y-6">
         <!-- CONTAINER ONDE FICA O INPUT DE NOME -->
-        <div class="relative">
+        <motion.div :initial="scaleIn.hidden" :while-in-view="scaleIn.visible" class="relative">
           <input
             type="text"
             id="name"
@@ -74,10 +81,10 @@ watch(enviado, (novoValor) => {
             required
             class="input-style"
           />
-        </div>
+        </motion.div>
 
         <!-- CONTAINER ONDE FICA O INPUT DE EMAIL -->
-        <div class="relative">
+        <motion.div :initial="scaleIn.hidden" :while-in-view="scaleIn.visible" class="relative">
           <input
             type="email"
             id="email"
@@ -87,10 +94,10 @@ watch(enviado, (novoValor) => {
             required
             class="input-style"
           />
-        </div>
+        </motion.div>
 
         <!-- CONTAINER ONDE FICA A TEXTAREA -->
-        <div class="relative">
+        <motion.div :initial="popUp.hidden" :while-in-view="popUp.visible" class="relative">
           <textarea
             id="msg"
             name="msg"
@@ -100,9 +107,15 @@ watch(enviado, (novoValor) => {
             rows="5"
             class="input-style resize-none"
           />
-        </div>
+        </motion.div>
 
-        <button type="submit" class="w-full btn-submit">Enviar</button>
+        <motion.button
+          :initial="popUp.hidden"
+          :while-in-view="popUp.visible"
+          type="submit"
+          class="w-full btn-submit"
+          >Enviar</motion.button
+        >
       </form>
 
       <!-- Renderiza a mensagem de sucesso caso o formulário tenha sido enviado -->
