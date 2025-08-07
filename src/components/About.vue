@@ -6,16 +6,10 @@
     <!-- Conateiner que engloba todo o about -->
     <div class="max-w-3xl mx-auto px-4">
       <!-- Titulo -->
-      <h2
-        v-motion
-        :variants="scaleIn"
-        class="text-2xl sm:text-4xl font-bold mb-8 gradient-text text-center"
-      >
-        Sobre mim
-      </h2>
+      <h2 class="text-2xl sm:text-4xl font-bold mb-8 gradient-text text-center">Sobre mim</h2>
 
       <!-- FOTO VAI FICAR AQUI!!! -->
-      <div v-motion :variants="scaleIn" class="flex justify-center mb-10">
+      <div class="flex justify-center mb-10">
         <img
           src="/img/perfil.jpeg"
           alt="Foto Perfil"
@@ -25,14 +19,10 @@
 
       <!-- CONTAINER DE FORMAÇÃO -->
       <div class="text-center mb-9 space-y-6 sm:px-7">
-        <h3
-          v-motion
-          :variants="slideUp"
-          class="text-xl sm:text-2xl font-bold mb-4 text-secondaryTheme"
-        >
+        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-secondaryTheme">
           Formação e Habilidades
         </h3>
-        <p v-motion :variants="slideUp" class="text-sm sm:text-[16px] text-start sm:text-center">
+        <p class="text-sm sm:text-[16px] text-start sm:text-center">
           <strong class="strong2">Graduado</strong> em
           <strong class="strong2">redes de computadores</strong>,
           <strong class="strong2">especializado</strong> em
@@ -50,16 +40,12 @@
           <div
             class="flex flex-col justify-center items-center rounded-xl p-6 transition-all duration-300"
           >
-            <h3 v-motion :variants="slideUp" class="text-xl font-bold mb-4 text-myWhite">
-              Tecnologias
-            </h3>
+            <h3 class="text-xl font-bold mb-4 text-myWhite">Tecnologias</h3>
 
             <!-- Container que engloba todas as skills-->
             <div class="grid max-ssm:grid-cols-2 grid-cols-3 sm:grid-cols-6 gap-10 pt-7">
               <!-- Irá iterar o array de skills e estiliza-las cada uma nessa span -->
               <div
-                v-motion
-                :variants="scaleIn"
                 v-for="(skill, index) in skillsFront"
                 :key="index"
                 class="flex flex-col items-center justify-center gap-2 hover:scale-95 active:scale-95 transition-all duration-500"

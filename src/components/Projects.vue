@@ -3,21 +3,13 @@
     <!-- Container que engloba todo o projeto -->
     <div class="max-w-5xl mx-auto px-4">
       <!-- TITULO -->
-      <h2
-        v-motion
-        :variants="scaleIn"
-        class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
-      >
-        Meus Projetos
-      </h2>
+      <h2 class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text">Meus Projetos</h2>
 
       <!-- Container que engloba os cards do projeto -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Iteração do objeto que da valor ao card para renderiza-lo -->
         <!-- Se isMobile for true, renderiza o card sem animaçao -->
         <div
-          v-motion
-          :variants="popUp"
           v-for="(item, index) in data_projects"
           :key="index"
           id="cardUniq"

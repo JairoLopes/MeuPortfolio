@@ -5,15 +5,11 @@
   >
     <!-- Container que engloba experiência -->
     <div class="max-w-4xl mx-auto px-4">
-      <h3
-        v-motion
-        :variants="scaleIn"
-        class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
-      >
+      <h3 class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center">
         Experiência Profissional
       </h3>
 
-      <p v-motion :variants="slideUp" class="text-center font-semibold">
+      <p class="text-center font-semibold">
         Segue abaixo um pouco do meu histórico profissional referente a área de tecnologia.
       </p>
 
@@ -22,7 +18,7 @@
         <div class="w-full my-4">
           <!-- Versão Mobile/Tablet: exibe os eventos centralizados em uma única coluna -->
           <div class="md:hidden flex flex-col gap-y-3">
-            <div v-motion :variants="scaleIn" v-for="(item, index) in exp" :key="index">
+            <div v-for="(item, index) in exp" :key="index">
               <!-- Card do evento -->
               <div
                 class="flex flex-col items-center justify-center gap-y-2 rounded-xl mt-4 md:mt-0 md:mx-6 px-6 pt-2 pb-6 md:p-6 bg-mainTheme/6 md:shadow-2xl md:hover:shadow-none shadow-mainTheme hover:-translate-y-2 transition-all duration-700 border-2 border-mainTheme/10"
@@ -52,7 +48,7 @@
           <div class="hidden md:flex flex-col gap-y-3">
             <!-- Círculo -->
             <div class="hidden md:block rounded-full w-4 h-4 bg-secondaryTheme mx-auto"></div>
-            <div v-motion :variants="popUp" v-for="(item, index) in exp" :key="index">
+            <div v-for="(item, index) in exp" :key="index">
               <div class="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto">
                 <!-- Se a direção for LEFT -->
                 <div

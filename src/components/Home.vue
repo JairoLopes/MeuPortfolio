@@ -29,11 +29,7 @@
     <!-- Sub-container que engloba toda a home -->
     <div class="text-center z-10 px-4">
       <!-- Titulo Meu Nome -->
-      <h1
-        class="max-ssm:text-4xl text-5xl md:text-7xl font-bold mb-6 text-mainTheme"
-        v-motion
-        :variants="scaleIn"
-      >
+      <h1 class="max-ssm:text-4xl text-5xl md:text-7xl font-bold mb-6 text-mainTheme">
         Jairo Lopes
       </h1>
 
@@ -55,11 +51,7 @@
           classeCursor="font-medium text-myWhite"
         />
 
-        <p
-          class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto"
-          v-motion
-          :variants="slideUp"
-        >
+        <p class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto">
           Desenvolvedor Frontend com foco em
           <strong class="strong2">Vue.js</strong>, <strong class="strong2">React</strong>,
           <strong class="strong2">Tailwind CSS</strong> e
@@ -71,12 +63,12 @@
       <!-- CONTAINER ONDE FICA OS LINKS DE VER PROJETOS E CONTATO -->
       <div class="flex justify-center items-center space-x-4">
         <!-- PROJETOS LINK -->
-        <a href="#projects" class="btn-hover2" v-motion :variants="popUp">
+        <a href="#projects" class="btn-hover2">
           <span class="relative z-10"><span class="max-ssm:hidden">Ver</span> Projetos</span>
         </a>
 
         <!-- CONTATO LINK -->
-        <a href="#contact" class="btn-hover" v-motion :variants="popUp">
+        <a href="#contact" class="btn-hover">
           <span class="relative z-10">Contato</span>
         </a>
       </div>
@@ -86,8 +78,6 @@
     <div class="flex justify-center items-center mt-15 gap-4">
       <!-- LINK DO LINKEDIN -->
       <a
-        v-motion
-        :variants="scaleInLeft"
         href="https://www.linkedin.com/in/jairo-lopes-filho/"
         target="_blank"
         class="flex flex-col hover:-translate-y-2 transition-all duration-700"
@@ -102,8 +92,6 @@
 
       <!-- LINK DO GITHUB -->
       <a
-        v-motion
-        :variants="scaleInRight"
         href="https://github.com/JairoLopes"
         target="_blank"
         class="flex flex-col hover:-translate-y-2 transition-all duration-700"
