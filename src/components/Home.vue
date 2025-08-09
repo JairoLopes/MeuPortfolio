@@ -60,11 +60,10 @@
           :while-in-view="slideUp.visible"
           class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto"
         >
-          Desenvolvedor Frontend com foco em
-          <strong class="strong2">Vue.js</strong>, <strong class="strong2">React</strong>,
-          <strong class="strong2">Tailwind CSS</strong> e
-          <strong class="strong2">TypeScript</strong>.<br />
-          Utilizando ferramentas de <strong class="strong2">IA</strong> para otimização de código.
+          Desenvolvedor Frontend especializado em <strong class="strong2">Vue.js</strong>,
+          combinando tecnologias como <strong class="!text-myWhite">Tailwind CSS</strong> e
+          <strong class="!text-myWhite">TypeScript</strong> para criar interfaces modernas e
+          responsivas.
         </motion.p>
       </div>
 

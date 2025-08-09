@@ -42,15 +42,15 @@
           :while-in-view="slideUp.visible"
           class="text-sm sm:text-[16px] text-start sm:text-center"
         >
-          <strong class="strong2">Graduado</strong> em
-          <strong class="strong2">redes de computadores</strong>,
-          <strong class="strong2">especializado</strong> em
-          <strong class="strong2">desenvolvimento web</strong>, com foco em
-          <strong class="strong2">Vue.js</strong>, <strong class="strong2">Tailwind</strong>,
-          <strong class="strong2">TypeScript</strong>, e também
-          <strong class="strong2">React</strong>, criando interfaces elegantes, responsivas e de
-          alto desempenho, desenvolvendo componentes reutilizáveis e aplicando animações envolventes
-          para experiências dinâmicas.
+          Graduado em
+          <strong class="!text-myWhite">redes de computadores</strong>,
+          <strong class="!text-myWhite">especializado</strong> em
+          <strong class="!text-myWhite">desenvolvimento web</strong>, com foco em
+          <strong class="strong2">Vue.js</strong>, <strong class="!text-myWhite">Tailwind</strong>,
+          <strong class="!text-myWhite">TypeScript</strong>, e também
+          <strong class="!text-myWhite">React</strong>, criando interfaces elegantes, responsivas e
+          de alto desempenho, desenvolvendo componentes reutilizáveis e aplicando animações
+          envolventes para experiências dinâmicas.
         </motion.p>
 
         <!-- Skills container -->
