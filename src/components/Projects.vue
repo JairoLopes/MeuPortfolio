@@ -50,11 +50,11 @@
             <h2 class="text-mainTheme text-lg font-bold mb-3">Tecnologias usadas:</h2>
 
             <!-- Aqui são as tecnologias usadas que serão renderizadas dentro de uma span -->
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 min-h-[64px]">
               <span
                 v-for="(tech, techIndex) in item.tech_usadas"
                 :key="techIndex"
-                class="bg-thirdTheme/10 text-thirdTheme py-1 px-3 rounded-full text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60"
+                class="bg-thirdTheme/10 text-thirdTheme py-1 px-3 rounded-full h-fit text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60"
                 :class="{ 'blur-sm opacity-40': !item.finish }"
               >
                 {{ tech }}
@@ -107,6 +107,15 @@ const data_projects = [
     tech_usadas: ['React', 'Tailwind CSS', 'Typescript', 'Framer Motion', 'API Rest'],
     link_projeto: 'https://tidetrack-sea.vercel.app/',
     github: 'https://github.com/JairoLopes/Tidetrack',
+    real: true,
+    finish: true,
+  },
+  {
+    nome: 'Cardápio Digital',
+    desc: 'Projeto de cardápio online totalmente customizável e reutilizável, onde as rotas são criadas de forma dinâmica e automática a partir das categorias do menu. A sua estrutura otimizada facilita a customização e a manutenção, sendo uma solução elegante e profissional para qualquer restaurante ou lanchonete.',
+    tech_usadas: ['Vue.js', 'Vue router', 'Tailwind CSS', 'TypeScript'],
+    link_projeto: 'https://cardapio-exemplo.vercel.app/',
+    github: 'https://github.com/JairoLopes/cardapio',
     real: true,
     finish: true,
   },
