@@ -12,7 +12,7 @@
       </motion.h2>
 
       <!-- Container que engloba os cards do projeto -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         <!-- Iteração do objeto que da valor ao card para renderiza-lo -->
         <motion.div
           :initial="popUp.hidden"
@@ -20,7 +20,7 @@
           v-for="(item, index) in data_projects"
           :key="index"
           id="cardUniq"
-          class="relative flex flex-col gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3 hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme transition-all duration-500"
+          class="relative flex flex-col justify-between h-full gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3 hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme transition-all duration-500"
         >
           <!-- CONTAINER PARA TITULO DO PROJETO + ICONE INFO -->
           <div class="flex justify-between items-center">
@@ -42,10 +42,10 @@
           </div>
 
           <!-- DESCRIÇÃO DO PROJETO -->
-          <p class="mb-4 min-h-[168px] flex items-center">{{ item.desc }}</p>
+          <p class="mb-4 flex items-center grow">{{ item.desc }}</p>
 
           <!-- Container onde ficam as techs utilizadas no projeto -->
-          <div class="min-h-[88px]">
+          <div class="flex flex-col justify-end grow">
             <!-- Titulo tecnologias usadas -->
             <h2 class="text-mainTheme text-lg font-bold mb-3">Tecnologias usadas:</h2>
 
