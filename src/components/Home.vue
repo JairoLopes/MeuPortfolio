@@ -10,7 +10,7 @@
       autoplay
       loop
       muted
-      src="/video/bg1.mp4"
+      src="/video/bgDesktop.mp4"
     />
 
     <!-- Video para mobile -->
@@ -19,11 +19,11 @@
       autoplay
       loop
       muted
-      src="/video/bg_mobile1.mp4"
+      src="/video/bgM2.mp4"
     />
 
     <!-- Criando camada overlay para melhorar a legibilidade do texto -->
-    <div class="absolute inset-0 bg-deepBlue opacity-50 sm:opacity-86 -z-10"></div>
+    <div class="absolute inset-0 bg-deepBlue opacity-85 sm:opacity-80 -z-10"></div>
     <!-- -------- FIM DO BLOCO DE VIDEOS PARA BACKGROUND ------- -->
 
     <!-- Sub-container que engloba toda a home -->
@@ -40,19 +40,20 @@
       <!-- Container de descrição e digitando -->
       <div id="description" class="mb-8">
         <!-- Utilizando o componente Digitando com as props corretas -->
-        <Digitando
+        <CrossfadeTech
           :textos="[
-            'Desenvolvedor Front-End',
+            $t('Digitando.cargo'),
             'Vue.js',
             'Vuex',
-            'React',
-            'TypeScript',
+            'Pinia',
+            'Vuetify',
             'Tailwind CSS',
+            'TypeScript',
+            'React',
             'JavaScript',
             'Node.js',
           ]"
-          classesTw="text-myWhite font-semibold text-xl sm:text-3xl mb-8 max-w-lg mx-auto"
-          classeCursor="font-medium text-myWhite"
+          classesTw="text-myWhite text-secondaryTheme font-semibold text-2xl sm:text-3xl  mb-8 max-w-lg mx-auto"
         />
 
         <motion.p
@@ -60,10 +61,8 @@
           :while-in-view="slideUp.visible"
           class="text-gray-300 text-center sm:text-lg max-w-2xl mx-auto"
         >
-          Desenvolvedor Frontend especializado em <strong class="strong2">Vue.js</strong>,
-          combinando tecnologias como <strong class="!text-myWhite">Tailwind CSS</strong> e
-          <strong class="!text-myWhite">TypeScript</strong> para criar interfaces modernas e
-          responsivas.
+          <!-- Span sendo usado para renderizar o texto, por que v-html nao nao funciona em tags motion -->
+          <span v-html="$t('home.descricao')"></span>
         </motion.p>
       </div>
 
@@ -76,7 +75,10 @@
           href="#projects"
           class="btn-hover2"
         >
-          <span class="relative z-10"><span class="max-ssm:hidden">Ver</span> Projetos</span>
+          <span class="relative z-10">
+            <span class="max-ssm:hidden">{{ $t('home.ver') }}</span>
+            {{ $t('home.projetos') }}
+          </span>
         </motion.a>
 
         <!-- CONTATO LINK -->
@@ -86,7 +88,7 @@
           href="#contact"
           class="btn-hover"
         >
-          <span class="relative z-10">Contato</span>
+          <span class="relative z-10">{{ $t('home.contato') }}</span>
         </motion.a>
       </div>
     </div>
@@ -129,7 +131,7 @@
 </template>
 
 <script setup lang="ts">
-import Digitando from '@/components/Digitando.vue'
+import CrossfadeTech from './CrossfadeTech.vue'
 import { motion } from 'motion-v'
 import { scaleIn, slideUp, slideInLeft, slideInRight, flipY } from '@/animation'
 </script>

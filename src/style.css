@@ -14,12 +14,14 @@ body {
 }
 
 @theme {
-  --color-mainTheme: #4d4dff;
-  --color-secondaryTheme: #ff9900;
-  --color-thirdTheme: #009973;
+  /* c8ff34 */
+  --color-mainTheme: #c7c7d1;
+  --color-secondaryTheme: #33adff;
+  --color-thirdTheme: #00cc99;
+
+  --color-deepBlue: #050505;
+  --color-navBlack: #000000;
   --color-myWhite: #e2e6e9;
-  --color-deepBlue: #050514;
-  --color-navBlack: #050514;
   --font-SpaceGrotesk: 'Space Grotesk', sans-serif;
 
   --breakpoint-ssm: 300px;

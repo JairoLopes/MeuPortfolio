@@ -1,0 +1,189 @@
+{
+  "navbar": {
+    "logo": "Portfolio",
+    "menu": {
+      "home": "Home",
+      "sobre": "About",
+      "experiencia": "Experience",
+      "projetos": "Projects",
+      "depoimentos": "Testimonials",
+      "contato": "Contact"
+    },
+    "ariaLabels": {
+      "menuToggle": "Toggle navigation menu"
+    }
+  },
+
+  "Digitando": {
+    "cargo": "Front-End Developer"
+  },
+
+  "home": {
+    "descricao": "Frontend Developer specialized in <strong class='strong2'>Vue.js</strong>, combining technologies such as <strong class='!text-myWhite'>Tailwind CSS</strong> and <strong class='!text-myWhite'>TypeScript</strong> to create modern and responsive interfaces.",
+    "ver": "View",
+    "projetos": "Projects",
+    "contato": "Contact"
+  },
+
+  "sobre": {
+    "titulo": "About me",
+    "formacao": "Education and Skills",
+    "descricao": "Graduated in <strong class='!text-myWhite'>computer networks</strong>, <strong class='!text-myWhite'>specialized</strong> in <strong class='!text-myWhite'>web development</strong>, focusing on <strong class='strong2'>Vue.js</strong>, <strong class='!text-myWhite'>Tailwind</strong>, <strong class='!text-myWhite'>TypeScript</strong>, and also <strong class='!text-myWhite'>React</strong>, creating elegant, responsive and high-performance interfaces, developing reusable components and applying engaging animations for dynamic experiences.",
+    "tecnologias": "Technologies"
+  },
+
+  "experiencia": {
+    "tituloSecao": "Professional Experience",
+    "subtituloSecao": "Below is a bit of my professional history in the technology area.",
+    "experiencias": [
+      {
+        "titulo": "Front-end Developer",
+        "empresa": "Freelancer",
+        "desc": "Development of responsive web interfaces using Vue.js, React and Tailwind to create reusable components for different devices.",
+        "ano": "2025",
+        "direction": "left"
+      },
+      {
+        "titulo": "Front-end Programmer",
+        "empresa": "City Hall of Olinda",
+        "desc": "Performing adjustments and improvements in the front-end of corporate systems.",
+        "ano": "2022",
+        "direction": "right"
+      },
+      {
+        "titulo": "Information Security Technician",
+        "empresa": "Bidweb Security",
+        "desc": "Working with the development/maintenance of Python scripts in containers, and threat monitoring.",
+        "ano": "2020",
+        "direction": "left"
+      },
+      {
+        "titulo": "Help Desk",
+        "empresa": "Secretary of Finance",
+        "desc": "Technical support provision.",
+        "ano": "2017",
+        "direction": "right"
+      }
+    ]
+  },
+
+  "projetos": {
+    "tituloSecao": "My Projects",
+    "tecnologiasUsadas": "Technologies used:",
+    "verProjeto": "View Project",
+    "projetoReal": "Real Project",
+    "projetoSimulado": "Simulated Project",
+    "lista": [
+      {
+        "nome": "Tidetrack",
+        "desc": "Web platform for global maritime monitoring. It displays real-time data on wave height, temperature and direction, as well as sea level. Connects to the Open-Meteo Marine Weather API for maritime data and the OpenStreetMap Nominatim API for location information and map search.",
+        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion", "API Rest"],
+        "link_projeto": "https://tidetrack-sea.vercel.app/",
+        "github": "https://github.com/JairoLopes/Tidetrack",
+        "real": true,
+        "finish": true
+      },
+      {
+        "nome": "Digital Menu",
+        "desc": "Fully customizable and reusable online menu project, where routes are created dynamically and automatically from the menu categories. Its optimized structure facilitates customization and maintenance, being an elegant and professional solution for any restaurant or snack bar.",
+        "tech_usadas": ["Vue.js", "Vue router", "Tailwind CSS", "TypeScript"],
+        "link_projeto": "https://cardapio-exemplo.vercel.app/",
+        "github": "https://github.com/JairoLopes/cardapio",
+        "real": true,
+        "finish": true
+      },
+      {
+        "nome": "Astrolobby",
+        "desc": "Web platform for astronomical exploration, acting as a hub for news and educational content. Integrates official NASA information by connecting the APOD API, and offers instant translation into Portuguese by connecting a second API (DeepL).",
+        "tech_usadas": [
+          "React",
+          "Tailwind CSS",
+          "Typescript",
+          "Framer Motion",
+          "API Rest",
+          "React router"
+        ],
+        "link_projeto": "https://astrolobby.vercel.app/",
+        "github": "https://github.com/JairoLopes/Astrolobby",
+        "real": true,
+        "finish": true
+      },
+      {
+        "nome": "E-commerce - Nuphar",
+        "desc": "Front-end of an e-commerce platform for selling marine algae for aquariums",
+        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+        "link_projeto": "https://nuphar.vercel.app/",
+        "github": "https://github.com/JairoLopes/Ecommerce",
+        "real": false,
+        "finish": true
+      },
+      {
+        "nome": "Personal Site",
+        "desc": "Portfolio and personal trainer hiring landing page",
+        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+        "link_projeto": "https://talles-personal.vercel.app/",
+        "github": "https://github.com/JairoLopes/personal_trainer",
+        "real": true,
+        "finish": true
+      },
+      {
+        "nome": "E-commerce",
+        "desc": "(IN DEVELOPMENT)",
+        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+        "link_projeto": "#",
+        "github": "",
+        "real": true,
+        "finish": false
+      }
+    ]
+  },
+
+  "depoimentos": {
+    "tituloSecao": "Testimonials",
+    "subtituloSecao": "Below is the opinion of some clients and/or co-workers.",
+    "lista": [
+      {
+        "dep": "Highly professional and meets deadlines, exceeded my expectations",
+        "user": "Talles Furtado"
+      },
+      {
+        "dep": "Since college he had a knack for coding, and I can say he has improved",
+        "user": "Emerson Rocha"
+      },
+      {
+        "dep": "As a coworker I can say, Jairo has an extremely creative mind when coding",
+        "user": "Ana Beatriz"
+      },
+      {
+        "dep": "Would hire again, deadline met and quality work",
+        "user": "Vinicius Chagas"
+      },
+      {
+        "dep": "Attentive and always asking for the client's opinion, loved the final result",
+        "user": "Mariana Souza"
+      },
+      {
+        "dep": "Very creative, coder mentality",
+        "user": "Pedro Almeida"
+      }
+    ]
+  },
+
+  "contato": {
+    "tituloSecao": "Contact",
+    "formulario": {
+      "nomePlaceholder": "Enter your name",
+      "emailPlaceholder": "example@gmail.com",
+      "mensagemPlaceholder": "Your message...",
+      "botaoEnviar": "Send",
+      "sucesso": "Message sent successfully!",
+      "erro": "An error occurred while sending the message!",
+      "validacao": "Please fill in all fields!"
+    }
+  },
+
+  "footer": {
+    "tecnologiasTitulo": "Page developed with:",
+    "codigoTitulo": "Page code"
+  }
+}

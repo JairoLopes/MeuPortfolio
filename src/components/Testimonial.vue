@@ -1,53 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
-import { scaleIn, popUp } from '@/animation'
-import { motion } from 'motion-v'
-
-// Array de dados dos depoimentos
-const depoimentos = ref([
-  {
-    dep: 'Altamente profissional e cumpre o prazo, superou minhas expectativas',
-    user: 'Talles Furtado',
-  },
-  {
-    dep: 'Desde a faculdade que ele tinha desenvoltura pra código, e posso dizer que ele se aprimorou',
-    user: 'Emerson Rocha',
-  },
-  {
-    dep: 'Como colega de trabalho posso falar, Jairo tem uma mente extremamente criativa na hora de codificar',
-    user: 'Ana Beatriz',
-  },
-  {
-    dep: 'Contrataria novamente, prazo cumprido e trabalho de qualidade',
-    user: 'Vinicius Chagas',
-  },
-  {
-    dep: 'Atencioso e sempre perguntando a opnião do cliente, amei o resultado final',
-    user: 'Mariana Souza',
-  },
-  {
-    dep: 'Muito criativo, mentalidade de codificador',
-    user: 'Pedro Almeida',
-  },
-])
-
-// Configurações do carrossel
-const carouselSettings = {
-  itemsToShow: 1,
-  wrapAround: true,
-  autoplay: 3500,
-  pauseAutoplayOnHover: true,
-  breakpoints: {
-    // 768px e acima
-    768: {
-      itemsToShow: 1,
-    },
-  },
-}
-</script>
-
 <template>
   <section
     id="depoimentos"
@@ -61,15 +11,15 @@ const carouselSettings = {
         :while-in-view="scaleIn.visible"
         class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
       >
-        Depoimentos
+        {{ $t('depoimentos.tituloSecao') }}
       </motion.h2>
 
       <motion.p
         :initial="popUp.hidden"
         :while-in-view="popUp.visible"
-        class="text-center font-semibold sm:text-lg mb-6 sm:mb-14"
+        class="text-center font-semibold sm:text-lg mb-6 sm:mb-14 text-thirdTheme"
       >
-        Segue abaixo a opnião de alguns clientes e/ou colegas de trabalho.
+        {{ $t('depoimentos.subtituloSecao') }}
       </motion.p>
 
       <!-- Uso do Carousel para renderizar os depoimentos -->
@@ -104,3 +54,36 @@ const carouselSettings = {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
+import { scaleIn, popUp } from '@/animation'
+import { motion } from 'motion-v'
+import { useI18n } from 'vue-i18n'
+
+const { tm } = useI18n()
+
+// Depoimentos vêm diretamente da tradução
+const depoimentos = computed(() => {
+  return tm('depoimentos.lista') as Array<{
+    dep: string
+    user: string
+  }>
+})
+
+// Configurações do carrossel
+const carouselSettings = {
+  itemsToShow: 1,
+  wrapAround: true,
+  autoplay: 3500,
+  pauseAutoplayOnHover: true,
+  breakpoints: {
+    // 768px e acima
+    768: {
+      itemsToShow: 1,
+    },
+  },
+}
+</script>

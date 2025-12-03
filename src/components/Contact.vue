@@ -3,6 +3,9 @@ import { ref, watch } from 'vue'
 import emailjs from '@emailjs/browser'
 import { scaleIn, popUp } from '@/animation'
 import { motion } from 'motion-v'
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
 
 // Estado reativo para os campos do formulário
 const nome = ref('')
@@ -16,7 +19,7 @@ const handleSubmit = (e: Event) => {
 
   // Validação dos campos
   if (nome.value === '' || email.value === '' || mensagem.value === '') {
-    alert('Preencha todos os campos!')
+    alert(t('contato.formulario.validacao'))
     return
   }
 
@@ -37,7 +40,7 @@ const handleSubmit = (e: Event) => {
     },
     (erro) => {
       console.log(erro)
-      alert('Ocorreu um erro ao enviar a mensagem!')
+      alert(alert(t('contato.formulario.erro')))
     },
   )
 }
@@ -66,7 +69,7 @@ watch(enviado, (novoValor) => {
         :while-in-view="scaleIn.visible"
         class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
       >
-        Contato
+        {{ $t('contato.tituloSecao') }}
       </motion.h2>
 
       <form @submit="handleSubmit" class="space-y-6">
@@ -76,7 +79,7 @@ watch(enviado, (novoValor) => {
             type="text"
             id="name"
             name="name"
-            placeholder="Digite seu nome"
+            :placeholder="$t('contato.formulario.nomePlaceholder')"
             v-model="nome"
             required
             class="input-style"
@@ -89,7 +92,7 @@ watch(enviado, (novoValor) => {
             type="email"
             id="email"
             name="email"
-            placeholder="exemplo@gmail.com"
+            :placeholder="locale === 'pt' ? 'exemplo@gmail.com' : 'example@gmail.com'"
             v-model="email"
             required
             class="input-style"
@@ -101,7 +104,7 @@ watch(enviado, (novoValor) => {
           <textarea
             id="msg"
             name="msg"
-            placeholder="Sua mensagem..."
+            :placeholder="$t('contato.formulario.mensagemPlaceholder')"
             v-model="mensagem"
             required
             rows="5"
@@ -114,8 +117,9 @@ watch(enviado, (novoValor) => {
           :while-in-view="popUp.visible"
           type="submit"
           class="w-full btn-submit"
-          >Enviar</motion.button
         >
+          {{ $t('contato.formulario.botaoEnviar') }}
+        </motion.button>
       </form>
 
       <!-- Renderiza a mensagem de sucesso caso o formulário tenha sido enviado -->
@@ -124,7 +128,7 @@ watch(enviado, (novoValor) => {
           v-if="enviado"
           class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-secondaryTheme text-white font-bold rounded-lg shadow-lg p-7"
         >
-          Mensagem enviada com sucesso!
+          {{ $t('contato.formulario.sucesso') }}
         </span>
       </Transition>
     </div>

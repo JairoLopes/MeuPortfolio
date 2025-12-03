@@ -10,15 +10,15 @@
         :while-in-view="scaleIn.visible"
         class="text-2xl sm:text-4xl font-bold mb-8 text-mainTheme text-center"
       >
-        Experiência Profissional
+        {{ $t('experiencia.tituloSecao') }}
       </motion.h3>
 
       <motion.p
         :initial="slideUp.hidden"
         :while-in-view="slideUp.visible"
-        class="text-center font-semibold"
+        class="text-center font-semibold text-thirdTheme"
       >
-        Segue abaixo um pouco do meu histórico profissional referente a área de tecnologia.
+        {{ $t('experiencia.subtituloSecao') }}
       </motion.p>
 
       <!-- Container da timeline -->
@@ -29,7 +29,7 @@
             <div v-for="(item, index) in exp" :key="index">
               <!-- Card do evento -->
               <div
-                class="flex flex-col items-center justify-center gap-y-2 rounded-xl mt-4 md:mt-0 md:mx-6 px-6 pt-2 pb-6 md:p-6 bg-mainTheme/6 md:shadow-2xl md:hover:shadow-none shadow-mainTheme hover:-translate-y-2 transition-all duration-700 border-2 border-mainTheme/10"
+                class="flex flex-col items-center justify-center gap-y-2 rounded-xl mt-4 md:mt-0 md:mx-6 px-6 pt-2 pb-6 md:p-6 md:shadow-2xl md:hover:shadow-none shadow-mainTheme hover:-translate-y-2 transition-all duration-700 border-2 border-mainTheme/10"
               >
                 <h1
                   class="text-lg text-secondaryTheme font-bold rounded-b-md border-b-2 border-mainTheme pb-1"
@@ -133,36 +133,20 @@
 <script setup lang="ts">
 import { motion } from 'motion-v'
 import { slideUp, scaleIn, popUp } from '@/animation'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
-// Array de dados da experiência profissional
-const exp = [
-  {
-    titulo: 'Desenvolvedor Front-end',
-    empresa: 'Freelancer',
-    desc: 'Desenvolvimento de interfaces web responsivas utilizando Vue.js, React e Tailwind para a criação de componentes reutilizáveis para diferentes dispositivos.',
-    ano: '2025',
-    direction: 'left', // Direção em que o card será exibido (esquerda)
-  },
-  {
-    titulo: 'Programador Front-end',
-    empresa: 'Prefeitura de Olinda',
-    desc: 'Realização de ajustes e melhorias no front-end de sistemas corporativos.',
-    ano: '2022',
-    direction: 'right', // Direção em que o card será exibido (direita)
-  },
-  {
-    titulo: 'Técnico em segurança da informação',
-    empresa: 'Bidweb Security',
-    desc: 'Trabalhando com o desenvolvimento/manutenção de scripts Python em containers, e monitoramento de ameaças.',
-    ano: '2020',
-    direction: 'left', // Direção em que o card será exibido (esquerda)
-  },
-  {
-    titulo: 'Help Desk',
-    empresa: 'Secretaria da fazenda',
-    desc: 'Prestação de suporte técnico.',
-    ano: '2017',
-    direction: 'right', // Direção em que o card será exibido (direita)
-  },
-]
+const { tm } = useI18n()
+
+// Type assertion simples para resolver o erro
+
+const exp = computed(() => {
+  return tm('experiencia.experiencias') as Array<{
+    titulo: string
+    empresa: string
+    desc: string
+    ano: number
+    direction: string
+  }>
+})
 </script>

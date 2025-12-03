@@ -57,7 +57,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-700"
     >
-      Home
+      {{ $t('navbar.menu.home') }}
     </a>
 
     <a
@@ -69,7 +69,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-400"
     >
-      Sobre
+      {{ $t('navbar.menu.sobre') }}
     </a>
 
     <a
@@ -81,7 +81,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-400"
     >
-      Experiência
+      {{ $t('navbar.menu.experiencia') }}
     </a>
 
     <a
@@ -93,7 +93,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-600"
     >
-      Projetos
+      {{ $t('navbar.menu.projetos') }}
     </a>
 
     <a
@@ -105,7 +105,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-600"
     >
-      Depoimentos
+      {{ $t('navbar.menu.depoimentos') }}
     </a>
 
     <a
@@ -117,7 +117,7 @@ const closeMenu = () => {
       }"
       class="text-2xl font-semibold text-white mt-4 transform transition-transform duration-800"
     >
-      Contato
+      {{ $t('navbar.menu.contato') }}
     </a>
   </div>
 </template>

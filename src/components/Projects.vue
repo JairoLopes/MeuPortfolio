@@ -8,7 +8,7 @@
         :while-in-view="scaleIn.visible"
         class="text-center text-2xl sm:text-3xl font-bold mb-16 gradient-text"
       >
-        Meus Projetos
+        {{ $t('projetos.tituloSecao') }}
       </motion.h2>
 
       <!-- Container que engloba os cards do projeto -->
@@ -36,7 +36,7 @@
                 class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 text-white font-semibold text-sm rounded py-2 px-3 transition-opacity duration-300 whitespace-nowrap z-10"
                 :class="{ 'bg-emerald-600': item.real, 'bg-thirdTheme': !item.real }"
               >
-                {{ item.real ? 'Projeto Real' : 'Projeto Simulado' }}
+                {{ item.real ? $t('projetos.projetoReal') : $t('projetos.projetoSimulado') }}
               </span>
             </div>
           </div>
@@ -47,7 +47,9 @@
           <!-- Container onde ficam as techs utilizadas no projeto -->
           <div class="flex flex-col justify-end grow">
             <!-- Titulo tecnologias usadas -->
-            <h2 class="text-mainTheme text-lg font-bold mb-3">Tecnologias usadas:</h2>
+            <h2 class="text-mainTheme text-lg font-bold mb-3">
+              {{ $t('projetos.tecnologiasUsadas') }}
+            </h2>
 
             <!-- Aqui são as tecnologias usadas que serão renderizadas dentro de uma span -->
             <div class="flex flex-wrap gap-2 min-h-[64px]">
@@ -72,7 +74,7 @@
               class="flex items-center gap-2 font-semibold border-b-2 pb-1 border-secondaryTheme text-mainTheme hover:text-mainTheme/80 transition-colors duration-500"
               :class="{ 'opacity-30 pointer-events-none': !item.finish }"
             >
-              Ver Projeto
+              {{ $t('projetos.verProjeto') }}
               <i class="bx bx-right-arrow-circle text-2xl text-myWhite"></i>
             </a>
 
@@ -95,74 +97,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { popUp, scaleIn } from '@/animation'
 import { motion } from 'motion-v'
+import { useI18n } from 'vue-i18n'
 
-// Array de dados dos projetos
-const data_projects = [
-  {
-    nome: 'Tidetrack',
-    desc: 'Plataforma web para monitoramento marítimo global. Ele exibe dados em tempo real sobre a altura, temperatura e direção das ondas, além do nível do mar. Conecta-se à API Marine Weather da Open-Meteo para os dados marítimos e à API Nominatim da OpenStreetMap para informações de localização e busca no mapa.',
-    tech_usadas: ['React', 'Tailwind CSS', 'Typescript', 'Framer Motion', 'API Rest'],
-    link_projeto: 'https://tidetrack-sea.vercel.app/',
-    github: 'https://github.com/JairoLopes/Tidetrack',
-    real: true,
-    finish: true,
-  },
-  {
-    nome: 'Cardápio Digital',
-    desc: 'Projeto de cardápio online totalmente customizável e reutilizável, onde as rotas são criadas de forma dinâmica e automática a partir das categorias do menu. A sua estrutura otimizada facilita a customização e a manutenção, sendo uma solução elegante e profissional para qualquer restaurante ou lanchonete.',
-    tech_usadas: ['Vue.js', 'Vue router', 'Tailwind CSS', 'TypeScript'],
-    link_projeto: 'https://cardapio-exemplo.vercel.app/',
-    github: 'https://github.com/JairoLopes/cardapio',
-    real: true,
-    finish: true,
-  },
-  {
-    nome: 'Astrolobby',
-    desc: 'Plataforma web para exploração astronômica, atuando como um hub de notícias e conteúdo educativo. Integra informações oficiais da NASA conectando a API APOD, e oferece tradução instantânea para o português conectando uma segunda API(DeepL).',
-    tech_usadas: [
-      'React',
-      'Tailwind CSS',
-      'Typescript',
-      'Framer Motion',
-      'API Rest',
-      'React router',
-    ],
-    link_projeto: 'https://astrolobby.vercel.app/',
-    github: 'https://github.com/JairoLopes/Astrolobby',
-    real: true,
-    finish: true,
-  },
-  {
-    nome: 'E-commerce - Nuphar',
-    desc: 'Front-end de uma plataforma de e-commerce para venda de algas marinhas para aquarismo',
-    tech_usadas: ['React', 'Tailwind CSS', 'Typescript', 'Framer Motion'],
-    link_projeto: 'https://nuphar.vercel.app/',
-    github: 'https://github.com/JairoLopes/Ecommerce',
-    real: false,
-    finish: true,
-  },
-  {
-    nome: 'Site Personal',
-    desc: 'Landing page de portfólio e contratação de personal trainer',
-    tech_usadas: ['React', 'Tailwind CSS', 'Typescript', 'Framer Motion'],
-    link_projeto: 'https://talles-personal.vercel.app/',
-    github: 'https://github.com/JairoLopes/personal_trainer',
-    real: true,
-    finish: true,
-  },
-  {
-    nome: 'E-commerce',
-    desc: '(EM DESENVOLVIMENTO)',
-    tech_usadas: ['React', 'Tailwind CSS', 'Typescript', 'Framer Motion'],
-    link_projeto: '#',
-    github: '',
-    real: true,
-    finish: false,
-  },
-]
+const { tm } = useI18n()
+
+// retorna em formato de array de objetos, os dados internacionalizados (pt.json, en.json)
+const data_projects = computed(() => {
+  return tm('projetos.lista') as Array<{
+    nome: string
+    desc: string
+    tech_usadas: string[]
+    link_projeto: string
+    github: string
+    real: boolean
+    finish: boolean
+  }>
+})
 
 // Estado reativo para o index do tooltip ativo
 const activeTooltipIndex = ref<number | null>(null)

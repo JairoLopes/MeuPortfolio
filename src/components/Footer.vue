@@ -21,7 +21,7 @@ const githubIcon = 'io-logo-github'
 
 <template>
   <footer
-    class="bg-blue-800/5 py-12 px-4 sm:px-6 lg:px-8 text-white/80 border-t border-mainTheme/20 shadow-2xl shadow-mainTheme"
+    class="bg-navBlack py-12 px-4 sm:px-6 lg:px-8 text-white/80 border-t border-mainTheme/20 shadow-2xl shadow-mainTheme"
   >
     <div class="container mx-auto max-w-6xl">
       <!-- Seção principal do footer, alinhada ao centro -->
@@ -29,7 +29,7 @@ const githubIcon = 'io-logo-github'
         <!-- Tecnologias Usadas -->
         <div class="flex flex-col items-center">
           <h3 class="text-xl md:text-3xl mb-4 text-myWhite/80 font-bold">
-            Página desenvolvida com:
+            {{ $t('footer.tecnologiasTitulo') }}
           </h3>
 
           <!-- Container que engloba os Icones -->
@@ -50,12 +50,14 @@ const githubIcon = 'io-logo-github'
 
         <!-- Seção de Links -->
         <div class="flex flex-col items-center">
-          <h3 class="text-xl md:text-2xl mb-4 text-myWhite/80 font-bold">Código da página</h3>
+          <h3 class="text-xl md:text-2xl mb-4 text-myWhite/80 font-bold">
+            {{ $t('footer.codigoTitulo') }}
+          </h3>
           <a
             href="https://github.com/JairoLopes/MeuPortfolio"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:scale-110 transition-transform duration-300"
+            class="hover:scale-110 transition-transform duration-300 animate-pulse"
           >
             <v-icon :name="githubIcon" scale="2" class="text-thirdTheme" />
           </a>

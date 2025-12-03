@@ -11,7 +11,7 @@
         :while-in-view="scaleIn.visible"
         class="text-2xl sm:text-4xl font-bold mb-8 gradient-text text-center"
       >
-        Sobre mim
+        {{ $t('sobre.titulo') }}
       </motion.h2>
 
       <!-- FOTO VAI FICAR AQUI!!! -->
@@ -23,7 +23,7 @@
         <img
           src="/img/perfil.jpeg"
           alt="Foto Perfil"
-          class="w-28 h-28 md:w-35 md:h-35 -rotate-35 border-2 border-mainTheme/40 rounded-full object-cover shadow-2xl shadow-mainTheme"
+          class="w-28 h-28 md:w-35 md:h-35 -rotate-35 border-2 border-mainTheme/40 rounded-full object-cover shadow-lg shadow-mainTheme"
         />
       </motion.div>
 
@@ -32,9 +32,9 @@
         <motion.h3
           :initial="slideUp.hidden"
           :while-in-view="slideUp.visible"
-          class="text-xl sm:text-2xl font-bold mb-4 text-secondaryTheme"
+          class="text-xl sm:text-2xl font-bold mb-4 text-thirdTheme"
         >
-          Formação e Habilidades
+          {{ $t('sobre.formacao') }}
         </motion.h3>
 
         <motion.p
@@ -42,15 +42,7 @@
           :while-in-view="slideUp.visible"
           class="text-sm sm:text-[16px] text-start sm:text-center"
         >
-          Graduado em
-          <strong class="!text-myWhite">redes de computadores</strong>,
-          <strong class="!text-myWhite">especializado</strong> em
-          <strong class="!text-myWhite">desenvolvimento web</strong>, com foco em
-          <strong class="strong2">Vue.js</strong>, <strong class="!text-myWhite">Tailwind</strong>,
-          <strong class="!text-myWhite">TypeScript</strong>, e também
-          <strong class="!text-myWhite">React</strong>, criando interfaces elegantes, responsivas e
-          de alto desempenho, desenvolvendo componentes reutilizáveis e aplicando animações
-          envolventes para experiências dinâmicas.
+          <span v-html="$t('sobre.descricao')"></span>
         </motion.p>
 
         <!-- Skills container -->
@@ -64,7 +56,7 @@
               :while-in-view="scaleIn.visible"
               class="text-xl font-bold mb-4 text-myWhite"
             >
-              Tecnologias
+              {{ $t('sobre.tecnologias') }}
             </motion.h3>
 
             <!-- Container que engloba todas as skills-->

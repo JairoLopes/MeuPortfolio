@@ -4,17 +4,14 @@
     <!-- CONTAINER QUE ENGLOBA TODA NAVBAR -->
     <div class="max-w-5xl mx-auto px-4 py-1">
       <div class="flex justify-between items-center h-16">
-        <!-- LOGO NOME -->
-        <a id="logo" href="#home" class="flex gap-2 font-mono text-xl font-bold text-white">
-          <span class="block text-mainTheme animate-bounce text-2xl"><</span>
-          <p class="animate-pulse">Portfólio</p>
-          <span
-            class="block text-thirdTheme text-2xl animate-bounce"
-            style="animation-delay: 500ms"
-          >
-            />
-          </span>
-        </a>
+        <!-- Botão para mudar idioma -->
+        <span
+          class="px-5 flex flex-col items-center cursor-pointer active:scale-80 transition-all text-secondaryTheme"
+          @click="toggleLanguage"
+        >
+          <v-icon name="md-language" scale="1.4" />
+          <span class="text-white">{{ locale === 'pt' ? 'en' : 'pt-br' }}</span>
+        </span>
 
         <!-- CONTAINER DO ICONE HAMBURGUER (aparece apenas em telas pequenas) -->
         <div id="burger-zip" class="w-7 h-5 cursor-pointer z-40 md:hidden" @click="toggleMenu">
@@ -44,9 +41,9 @@
             href="#home"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Home
+            {{ $t('navbar.menu.home') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -55,9 +52,9 @@
             href="#about"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Sobre
+            {{ $t('navbar.menu.sobre') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -66,9 +63,9 @@
             href="#experiencia"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Experiência
+            {{ $t('navbar.menu.experiencia') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -77,9 +74,9 @@
             href="#projects"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Projetos
+            {{ $t('navbar.menu.projetos') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -88,9 +85,9 @@
             href="#depoimentos"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Depoimentos
+            {{ $t('navbar.menu.depoimentos') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -99,9 +96,9 @@
             href="#contact"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            Contato
+            {{ $t('navbar.menu.contato') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-mainTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
         </div>
@@ -113,6 +110,13 @@
 <script setup lang="ts">
 import { watch, onUnmounted, onMounted, ref } from 'vue'
 import { throttle } from 'lodash'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+function toggleLanguage() {
+  locale.value = locale.value === 'pt' ? 'en' : 'pt'
+}
 
 const isScrolling = ref(false)
 
