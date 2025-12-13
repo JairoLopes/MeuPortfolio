@@ -52,7 +52,9 @@
                   <!-- Conteúdo -->
                   <div class="space-y-4">
                     <div>
-                      <h3 class="text-xl font-bold text-myWhite mb-1">{{ item.titulo }}</h3>
+                      <h3 class="text-xl font-bold text-myWhite mb-1">
+                        {{ item.titulo }}
+                      </h3>
                       <div class="flex items-center gap-2">
                         <div
                           class="w-8 h-px bg-gradient-to-r from-thirdTheme to-secondaryTheme"

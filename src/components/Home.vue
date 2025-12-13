@@ -79,7 +79,7 @@
       >
         <p
           v-html="$t('home.descricao')"
-          class="text-lg md:text-xl text-myWhite leading-relaxed p-3"
+          class="text-lg text-left md:text-xl text-myWhite leading-relaxed p-3"
         ></p>
 
         <!-- sombra e blur no texto -->
@@ -112,7 +112,7 @@
 
         <!-- Botão Contato -->
         <a
-          href="#contact"
+          :href="locale === 'pt' ? link.pt : link.en"
           class="group relative px-8 py-4 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
@@ -164,6 +164,16 @@
 import CrossfadeTech from './CrossfadeTech.vue'
 import { motion } from 'motion-v'
 import { scaleIn, slideUp, flipY } from '@/animation'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+const msgPt = encodeURIComponent('Olá, gostaria de fazer um site com você.')
+const msgEn = encodeURIComponent('Hello, I would like to make a website with you.')
+const link = {
+  pt: `https://wa.me/5581997052877?text=${msgPt}`,
+  en: `https://wa.me/5581997052877?text=${msgEn}`,
+}
 
 import { addIcons } from 'oh-vue-icons'
 import { FaPlus, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin } from 'oh-vue-icons/icons'
