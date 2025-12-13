@@ -50,16 +50,18 @@
                   class="relative bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-thirdTheme/30 group-hover:-translate-y-1"
                 >
                   <!-- Conteúdo -->
-                  <div class="space-y-4">
+                  <div class="space-y-7">
                     <div>
-                      <h3 class="text-xl font-bold text-myWhite mb-1">
+                      <h3 class="text-xl text-center font-bold text-myWhite mb-4">
                         {{ item.titulo }}
                       </h3>
-                      <div class="flex items-center gap-2">
+                      <div class="flex items-center justify-center gap-2">
                         <div
                           class="w-8 h-px bg-gradient-to-r from-thirdTheme to-secondaryTheme"
                         ></div>
-                        <h4 class="text-lg font-semibold text-thirdTheme">{{ item.empresa }}</h4>
+                        <h4 class="text-lg font-semibold text-thirdTheme">
+                          {{ item.empresa }}
+                        </h4>
                         <div
                           class="w-8 h-px bg-gradient-to-l from-thirdTheme to-secondaryTheme"
                         ></div>
@@ -112,22 +114,6 @@
                     'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
                 }"
               ></div>
-
-              <!-- Pontos decorativos na linha -->
-              <div
-                v-for="n in 3"
-                :key="n"
-                class="absolute left-1/2 transform -translate-x-1/2"
-                :style="{
-                  top: `${n * 25}%`,
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  background:
-                    'radial-gradient(circle at 30% 30%, rgba(0, 204, 153, 0.8), rgba(51, 173, 255, 0.6))',
-                  boxShadow: '0 0 10px rgba(0, 204, 153, 0.3)',
-                }"
-              ></div>
             </div>
 
             <!-- Cards do evento -->
@@ -169,7 +155,9 @@
                     <!-- Conteúdo -->
                     <div class="space-y-4">
                       <div>
-                        <h3 class="text-xl font-bold text-myWhite mb-2">{{ item.titulo }}</h3>
+                        <h3 class="text-xl text-center font-bold text-myWhite mb-2">
+                          {{ item.titulo }}
+                        </h3>
                         <div class="flex items-center gap-3 mb-4">
                           <div
                             class="flex-1 h-px bg-gradient-to-r from-thirdTheme/50 to-transparent"
@@ -232,12 +220,12 @@ const exp = computed(() => {
 // Função para obter tags de tecnologia baseadas no título
 const getTechTags = (titulo: string) => {
   const tagsMap: Record<string, string[]> = {
-    'Front-end Developer': ['Vue.js', 'React', 'TypeScript', 'Tailwind'],
-    'Desenvolvedor Front-end': ['Vue.js', 'React', 'TypeScript', 'Tailwind'],
+    'Front-end Developer': ['Vue.js', 'TypeScript', 'Tailwind'],
+    'Desenvolvedor Front-end': ['Vue.js', 'TypeScript', 'Tailwind'],
     'Front-end Programmer': ['JavaScript', 'HTML/CSS', 'Responsive'],
     'Programador Front-end': ['JavaScript', 'HTML/CSS', 'Responsivo'],
-    'Information Security Technician': ['Python', 'Docker', 'Security'],
-    'Técnico em segurança da informação': ['Python', 'Docker', 'Segurança'],
+    'Information Security Technician': ['Python', 'Security'],
+    'Técnico em segurança da informação': ['Python', 'Segurança'],
     'Help Desk': ['Support', 'Troubleshooting', 'Customer Service'],
     'Suport Técnico': ['Suporte', 'Resolução de Problemas', 'Atendimento'],
   }

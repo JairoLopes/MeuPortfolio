@@ -15,9 +15,10 @@ body {
 
 @theme {
   /* c8ff34 */
-  --color-mainTheme: #c7c7d1;
-  --color-secondaryTheme: #33adff;
-  --color-thirdTheme: #00cc99;
+  --color-mainTheme: #ecfeff;
+  --color-secondaryTheme: #38bdf8;
+  --color-thirdTheme: #2dd4bf;
+  --color-fourthTheme: #33bbff;
 
   --color-deepBlue: #050505;
   --color-navBlack: #000000;
@@ -25,6 +26,7 @@ body {
   --font-SpaceGrotesk: 'Space Grotesk', sans-serif;
 
   --breakpoint-ssm: 300px;
+  --breakpoint-smm: 390px;
 
   /* ANIMAÇÕES */
   /* Animação de carregamento */
@@ -153,7 +155,7 @@ strong {
 
 /* Gradiente para textos */
 .gradient-text-theme {
-  @apply bg-gradient-to-r from-thirdTheme to-thirdTheme/50 
+  @apply bg-gradient-to-r from-thirdTheme to-secondaryTheme 
          bg-clip-text text-transparent;
 }
 

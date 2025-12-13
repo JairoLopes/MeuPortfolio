@@ -52,7 +52,7 @@
       <motion.h1
         :initial="scaleIn.hidden"
         :while-in-view="scaleIn.visible"
-        class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-10 text-myWhite px-4"
+        class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-10 text-mainTheme px-4"
       >
         Jairo Lopes
       </motion.h1>
@@ -62,11 +62,11 @@
         :initial="{ opacity: 0, y: 20 }"
         :while-in-view="{ opacity: 1, y: 0 }"
         :transition="{ duration: 0.8 }"
-        class="mb-10 md:mb-14 px-4"
+        class="mb-2 md:mb-7 px-4"
       >
         <CrossfadeTech
           :textos="['Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'Node.js']"
-          classesTw="text-2xl md:text-3xl lg:text-4xl font-bold text-thirdTheme"
+          classesTw="text-2xl md:text-3xl lg:text-4xl font-bold text-fourthTheme"
         />
       </motion.div>
 
@@ -75,31 +75,28 @@
         :initial="{ opacity: 0, y: 20 }"
         :while-in-view="{ opacity: 1, y: 0 }"
         :transition="{ duration: 0.8, delay: 0.2 }"
-        class="max-w-2xl mx-auto mb-12 md:mb-16 px-6 relative"
+        class="max-w-2xl mx-auto mb-6 md:mb-10 px-6 relative"
       >
         <p
           v-html="$t('home.descricao')"
-          class="text-lg text-left md:text-xl text-myWhite leading-relaxed p-3"
+          class="text-md md:text-lg text-left text-myWhite leading-relaxed p-3"
         ></p>
-
-        <!-- sombra e blur no texto -->
-        <span class="absolute inset-0 bg-black/30 -z-10 rounded-xl"></span>
       </motion.div>
 
       <!-- Botões ver projetos e contato-->
       <motion.div
         :initial="slideUp.hidden"
         :while-in-view="slideUp.visible"
-        class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mb-16 md:mb-20 px-4"
+        class="flex max-smm:flex-col flex-row justify-center items-center gap-4 md:gap-6 mb-16 md:mb-20 px-4"
       >
         <!-- Botão Projetos -->
         <a
           href="#projects"
-          class="group relative px-8 py-4 rounded-xl gradient-btn overflow-hidden transition-all duration-100 hover:scale-105"
+          class="group relative px-6 py-3 rounded-xl gradient-btn overflow-hidden transition-all duration-100 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
           <span
-            class="text-navBlack font-bold text-lg tracking-wide flex items-center gap-3 relative z-10"
+            class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3 relative z-10"
           >
             <v-icon
               name="fa-plus"
@@ -113,17 +110,17 @@
         <!-- Botão Contato -->
         <a
           :href="locale === 'pt' ? link.pt : link.en"
-          class="group relative px-8 py-4 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
+          class="group relative px-6 py-3 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
-          <span class="text-navBlack font-bold text-lg tracking-wide flex items-center gap-3">
+          <span class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3">
             <v-icon name="ri-whatsapp-fill" scale="1.2" class="group-hover:animate-bounce" />
             {{ $t('home.contato') }}
           </span>
         </a>
       </motion.div>
 
-      <!-- Container que engloba titulo CONECTE-SE, E subcontainer de icones do linkedine  github -->
+      <!-- Container que engloba subcontainer de icones do linkedin e  github -->
       <motion.div
         :initial="flipY.hidden"
         :while-in-view="flipY.visible"
@@ -133,8 +130,8 @@
           {{ $t('home.social') }}
         </p>
 
-        <!-- CONTAINER DE LINKEDIN E GITHUB -->
-        <div class="flex gap-7">
+        <!-- CONTAINER DE LINKEDIN E GITHUB PARA MOBILE-->
+        <div class="flex gap-3 md:hidden">
           <!-- LinkedIn -->
           <a
             href="https://www.linkedin.com/in/jairo-lopes-filho/"
@@ -142,7 +139,7 @@
             aria-label="LinkedIn"
             class="hover:scale-110 transition-all duration-300"
           >
-            <v-icon name="io-logo-linkedin" scale="2.2" class="text-thirdTheme" />
+            <v-icon name="io-logo-linkedin" scale="1.9" class="text-fourthTheme" />
           </a>
 
           <!-- GitHub -->
@@ -152,7 +149,30 @@
             aria-label="GitHub"
             class="hover:scale-110 transition-all duration-300"
           >
-            <v-icon name="io-logo-github" scale="2.2" class="text-thirdTheme" />
+            <v-icon name="io-logo-github" scale="1.9" class="text-fourthTheme" />
+          </a>
+        </div>
+
+        <!-- CONTAINER DE LINKEDIN E GITHUB PARA DESKTOP-->
+        <div class="hidden gap-4 md:flex">
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/jairo-lopes-filho/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="hover:scale-110 transition-all duration-300"
+          >
+            <v-icon name="io-logo-linkedin" scale="2" class="text-fourthTheme" />
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/JairoLopes"
+            target="_blank"
+            aria-label="GitHub"
+            class="hover:scale-110 transition-all duration-300"
+          >
+            <v-icon name="io-logo-github" scale="2" class="text-fourthTheme" />
           </a>
         </div>
       </motion.div>

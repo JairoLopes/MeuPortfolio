@@ -45,7 +45,7 @@
       {
         "titulo": "Front-end Developer",
         "empresa": "Freelancer",
-        "desc": "Development of responsive web interfaces using Vue.js, React and Tailwind to create reusable components for different devices.",
+        "desc": "Development of responsive web interfaces using Vue.js, Tailwind to create reusable components for different devices.",
         "ano": "2025",
         "direction": "left"
       },
@@ -113,7 +113,7 @@
       {
         "nome": "Astrolobby",
         "desc": "Web platform for astronomical exploration, acting as a hub for news and educational content. Integrates official NASA information by connecting the APOD API, and offers instant translation into Portuguese by connecting a second API (DeepL).",
-        "tech_usadas": ["React", "Tailwind CSS", "TypeScript", "API Rest", "Vue Router"],
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript", "API Rest", "React router"],
         "link_projeto": "https://astrolobby.vercel.app/",
         "github": "https://github.com/JairoLopes/Astrolobby",
         "real": true,
