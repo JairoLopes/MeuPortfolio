@@ -6,7 +6,7 @@
       <div class="flex justify-between items-center h-16">
         <!-- Botão para mudar idioma -->
         <span
-          class="px-5 flex flex-col items-center cursor-pointer active:scale-80 transition-all text-secondaryTheme"
+          class="px-5 flex flex-col items-center cursor-pointer active:scale-80 transition-all text-primaryTheme"
           @click="toggleLanguage"
         >
           <v-icon name="md-language" scale="1.4" />
@@ -43,7 +43,7 @@
           >
             {{ $t('navbar.menu.home') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -54,7 +54,7 @@
           >
             {{ $t('navbar.menu.sobre') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -65,7 +65,7 @@
           >
             {{ $t('navbar.menu.experiencia') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -76,7 +76,7 @@
           >
             {{ $t('navbar.menu.projetos') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
 
@@ -87,18 +87,7 @@
           >
             {{ $t('navbar.menu.depoimentos') }}
             <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
-            ></span>
-          </a>
-
-          <!-- CONTATO -->
-          <a
-            href="#contact"
-            class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
-          >
-            {{ $t('navbar.menu.contato') }}
-            <span
-              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-secondaryTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
           </a>
         </div>
@@ -111,6 +100,9 @@
 import { watch, onUnmounted, onMounted, ref } from 'vue'
 import { throttle } from 'lodash'
 import { useI18n } from 'vue-i18n'
+import { addIcons } from 'oh-vue-icons'
+import { MdLanguage } from 'oh-vue-icons/icons'
+addIcons(MdLanguage)
 
 const { locale } = useI18n()
 

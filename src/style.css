@@ -140,3 +140,39 @@ strong {
 .input-style {
   @apply w-full bg-white/5 font-semibold border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-secondaryTheme focus:bg-secondaryTheme/5;
 }
+
+/* Adicione estas classes ao final do arquivo */
+
+/* Gradiente para botões */
+.gradient-btn {
+  @apply bg-gradient-to-r from-thirdTheme to-secondaryTheme 
+         hover:from-thirdTheme/90 hover:to-secondaryTheme/90 
+         transition-all duration-500 shadow-lg shadow-thirdTheme/30 
+         hover:shadow-thirdTheme/50;
+}
+
+/* Gradiente para textos */
+.gradient-text-theme {
+  @apply bg-gradient-to-r from-thirdTheme to-thirdTheme/50 
+         bg-clip-text text-transparent;
+}
+
+/* Animação de flutuação suave */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+/* Efeito de brilho sutil */
+.glow-effect {
+  @apply shadow-[0_0_30px_rgba(0,204,153,0.15)];
+}

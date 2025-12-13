@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <!-- Renderiza o LoadingScreen apenas se isLoaded for 'false' -->
     <LoadingScreen v-if="!isLoaded" @complete="handleLoadingComplete" />
 
@@ -26,11 +26,11 @@
       <!-- Componente Testimonial -->
       <Testimonial />
 
-      <!-- Componente Contact -->
-      <Contact />
-
       <!-- Componente Footer -->
       <Footer />
+
+      <!-- Componente da seta que leva ao topo -->
+      <ArrowTop />
     </div>
   </div>
 </template>
@@ -46,8 +46,8 @@ import About from '@/components/About.vue'
 import Exp from '@/components/Exp.vue'
 import Projects from '@/components/Projects.vue'
 import Testimonial from '@/components/Testimonial.vue'
-import Contact from '@/components/Contact.vue'
 import Footer from './components/Footer.vue'
+import ArrowTop from './components/ArrowTop.vue'
 
 // Define o estado reativo para controlar se a tela de carregamento já finalizou.
 // Começa como 'false' para exibir a tela de carregamento inicialmente.

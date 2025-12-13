@@ -19,14 +19,20 @@
     "descricao": "Desenvolvedor Frontend especializado em <strong class='strong2'>Vue.js</strong>, combinando tecnologias como <strong class='!text-myWhite'>Tailwind CSS</strong> e <strong class='!text-myWhite'>TypeScript</strong> para criar interfaces modernas e responsivas.",
     "ver": "Ver",
     "projetos": "Projetos",
-    "contato": "Contato"
+    "contato": "Contato",
+    "social": "Redes sociais profissionais"
   },
 
   "sobre": {
     "titulo": "Sobre mim",
     "formacao": "Formação e Habilidades",
     "descricao": "Graduado em <strong class='!text-myWhite'>redes de computadores</strong>, <strong class='!text-myWhite'>especializado</strong> em <strong class='!text-myWhite'>desenvolvimento web</strong>, com foco em <strong class='strong2'>Vue.js</strong>, <strong class='!text-myWhite'>Tailwind</strong>, <strong class='!text-myWhite'>TypeScript</strong>, e também <strong class='!text-myWhite'>React</strong>, criando interfaces elegantes, responsivas e de alto desempenho, desenvolvendo componentes reutilizáveis e aplicando animações envolventes para experiências dinâmicas.",
-    "tecnologias": "Tecnologias"
+    "tecnologias": "Tecnologias",
+    "niveis": {
+      "especialista": "Especialista",
+      "intermediario": "Intermediário",
+      "basico": "Básico"
+    }
   },
 
   "experiencia": {
@@ -72,64 +78,63 @@
     "projetoSimulado": "Projeto Simulado",
     "lista": [
       {
-        "nome": "Tidetrack",
-        "desc": "Plataforma web para monitoramento marítimo global. Ele exibe dados em tempo real sobre a altura, temperatura e direção das ondas, além do nível do mar. Conecta-se à API Marine Weather da Open-Meteo para os dados marítimos e à API Nominatim da OpenStreetMap para informações de localização e busca no mapa.",
-        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion", "API Rest"],
-        "link_projeto": "https://tidetrack-sea.vercel.app/",
-        "github": "https://github.com/JairoLopes/Tidetrack",
+        "nome": "Site Personal",
+        "desc": "Landing page de portfólio e contratação de personal trainer",
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript"],
+        "link_projeto": "https://talles-personal.vercel.app/",
+        "github": "https://github.com/JairoLopes/personal_trainer",
         "real": true,
+        "real_string": "Projeto real",
         "finish": true
       },
       {
         "nome": "Cardápio Digital",
         "desc": "Projeto de cardápio online totalmente customizável e reutilizável, onde as rotas são criadas de forma dinâmica e automática a partir das categorias do menu. A sua estrutura otimizada facilita a customização e a manutenção, sendo uma solução elegante e profissional para qualquer restaurante ou lanchonete.",
-        "tech_usadas": ["Vue.js", "Vue router", "Tailwind CSS", "TypeScript"],
+        "tech_usadas": ["Vue.js", "Vue Router", "Tailwind CSS", "TypeScript"],
         "link_projeto": "https://cardapio-exemplo.vercel.app/",
         "github": "https://github.com/JairoLopes/cardapio",
         "real": true,
+        "real_string": "Projeto real",
+        "finish": true
+      },
+      {
+        "nome": "Tidetrack",
+        "desc": "Plataforma web para monitoramento marítimo global. Ele exibe dados em tempo real sobre a altura, temperatura e direção das ondas, além do nível do mar. Conecta-se à API Marine Weather da Open-Meteo para os dados marítimos e à API Nominatim da OpenStreetMap para informações de localização e busca no mapa.",
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript", "API Rest"],
+        "link_projeto": "https://tidetrack-sea.vercel.app/",
+        "github": "https://github.com/JairoLopes/Tidetrack",
+        "real": true,
+        "real_string": "Projeto real",
         "finish": true
       },
       {
         "nome": "Astrolobby",
         "desc": "Plataforma web para exploração astronômica, atuando como um hub de notícias e conteúdo educativo. Integra informações oficiais da NASA conectando a API APOD, e oferece tradução instantânea para o português conectando uma segunda API(DeepL).",
-        "tech_usadas": [
-          "React",
-          "Tailwind CSS",
-          "Typescript",
-          "Framer Motion",
-          "API Rest",
-          "React router"
-        ],
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript", "API Rest", "Vue Router"],
         "link_projeto": "https://astrolobby.vercel.app/",
         "github": "https://github.com/JairoLopes/Astrolobby",
         "real": true,
+        "real_string": "Projeto real",
         "finish": true
       },
       {
         "nome": "E-commerce - Nuphar",
         "desc": "Front-end de uma plataforma de e-commerce para venda de algas marinhas para aquarismo",
-        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript"],
         "link_projeto": "https://nuphar.vercel.app/",
         "github": "https://github.com/JairoLopes/Ecommerce",
         "real": false,
-        "finish": true
-      },
-      {
-        "nome": "Site Personal",
-        "desc": "Landing page de portfólio e contratação de personal trainer",
-        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
-        "link_projeto": "https://talles-personal.vercel.app/",
-        "github": "https://github.com/JairoLopes/personal_trainer",
-        "real": true,
+        "real_string": "Projeto fictício",
         "finish": true
       },
       {
         "nome": "E-commerce",
         "desc": "(EM DESENVOLVIMENTO)",
-        "tech_usadas": ["React", "Tailwind CSS", "Typescript", "Framer Motion"],
+        "tech_usadas": ["React", "Tailwind CSS", "TypeScript"],
         "link_projeto": "#",
         "github": "",
-        "real": true,
+        "real": false,
+        "real_string": "Projeto fictício",
         "finish": false
       }
     ]
@@ -164,19 +169,6 @@
         "user": "Pedro Almeida"
       }
     ]
-  },
-
-  "contato": {
-    "tituloSecao": "Contato",
-    "formulario": {
-      "nomePlaceholder": "Digite seu nome",
-      "emailPlaceholder": "exemplo@gmail.com",
-      "mensagemPlaceholder": "Sua mensagem...",
-      "botaoEnviar": "Enviar",
-      "sucesso": "Mensagem enviada com sucesso!",
-      "erro": "Ocorreu um erro ao enviar a mensagem!",
-      "validacao": "Preencha todos os campos!"
-    }
   },
 
   "footer": {

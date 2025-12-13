@@ -1,8 +1,19 @@
 <template>
-  <section id="projects" class="min-h-screen flex justify-center pt-[10%] pb-20">
-    <!-- Container que engloba todo o projeto -->
-    <div class="max-w-5xl mx-auto px-4">
-      <!-- TITULO -->
+  <section
+    id="projects"
+    class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6 md:px-8 py-12 md:py-20"
+  >
+    <!-- Fundo extremamente clean -->
+    <div class="absolute inset-0 -z-10 bg-navBlack"></div>
+
+    <!-- Gradiente sutil apenas nas bordas -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 border border-white/5 rounded-none"></div>
+    </div>
+
+    <!-- Container principal -->
+    <div class="text-center z-10 w-full max-w-5xl mx-auto relative">
+      <!-- Título da seção -->
       <motion.h2
         :initial="scaleIn.hidden"
         :while-in-view="scaleIn.visible"
@@ -11,100 +22,143 @@
         {{ $t('projetos.tituloSecao') }}
       </motion.h2>
 
-      <!-- Container que engloba os cards do projeto -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        <!-- Iteração do objeto que da valor ao card para renderiza-lo -->
+      <!-- Container Grid que engloba todos os cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <!-- CARD INDIVIDUAL -->
         <motion.div
-          :initial="popUp.hidden"
-          :while-in-view="popUp.visible"
           v-for="(item, index) in data_projects"
           :key="index"
-          id="cardUniq"
-          class="relative flex flex-col justify-between h-full gap-3 p-9 rounded-xl bg-mainTheme/6 border-2 border-mainTheme/10 hover:-translate-y-3 hover:border-b-mainTheme/30 hover:shadow-2xl hover:shadow-mainTheme transition-all duration-500"
+          :initial="{ opacity: 0, scale: 0.95 }"
+          :while-in-view="{ opacity: 1, scale: 1 }"
+          :transition="{ duration: 0.5, delay: index * 0.1 }"
+          class="group p-2 relative"
         >
-          <!-- CONTAINER PARA TITULO DO PROJETO + ICONE INFO -->
-          <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold mb-2 text-secondaryTheme">
-              {{ item.nome }}
-            </h3>
-            <div class="relative cursor-pointer" @click="handleTooltipToggle(index)">
-              <!-- Tooltip "Projeto Real" ou "Simulado" -->
-              <v-icon name="io-information-circle" scale="1.5" class="-translate-y-5" />
+          <!-- Card extremamente minimalista -->
+          <div
+            class="relative h-full bg-gradient-to-b from-white/3 to-white/1 rounded-none border-t border-white/10 overflow-hidden transition-all duration-500 hover:border-t-thirdTheme/30"
+          >
+            <!-- Número do projeto sutil -->
+            <div class="absolute top-2 left-3 text-2xl font-thin text-white">0{{ index + 1 }}</div>
 
-              <span
-                v-if="activeTooltipIndex === index"
-                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 text-white font-semibold text-sm rounded py-2 px-3 transition-opacity duration-300 whitespace-nowrap z-10"
-                :class="{ 'bg-emerald-600': item.real, 'bg-thirdTheme': !item.real }"
-              >
-                {{ item.real ? $t('projetos.projetoReal') : $t('projetos.projetoSimulado') }}
-              </span>
+            <!-- Conteúdo principal -->
+            <div class="flex flex-col h-full p-8 pt-12">
+              <!-- Título e descrição -->
+              <div class="mb-8 grow flex flex-col">
+                <h3 class="text-lg font-medium text-myWhite">
+                  {{ item.nome }}
+                </h3>
+
+                <p
+                  class="text-sm blu text-left text-myWhite/60 leading-relaxed mb-2 mt-5 flex items-end grow"
+                >
+                  {{ item.desc }}
+                </p>
+              </div>
+
+              <!-- Tecnologias -->
+              <div :class="item.finish ? 'mb-10 grow flex flex-col justify-end' : 'blur-sm'">
+                <!-- titulo tecnologias usadas -->
+                <p class="mb-3 text-xs text-thirdTheme/70 font-medium uppercase tracking-wider">
+                  {{ $t('projetos.tecnologiasUsadas') }}
+                </p>
+
+                <!-- Container das tecnologias -->
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span
+                    v-for="(tech, techIndex) in item.tech_usadas"
+                    :key="techIndex"
+                    class="px-3 py-1.5 text-xs font-medium rounded-full border border-white/10 bg-gradient-to-br from-white/5 to-white/1 text-myWhite/80 hover:bg-secondaryTheme/10 hover:text-secondaryTheme hover:border-secondaryTheme/30 transition-all duration-300 group/tech relative overflow-hidden"
+                  >
+                    <!-- Efeito de brilho sutil no hover -->
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-secondaryTheme/0 via-secondaryTheme/10 to-secondaryTheme/0 translate-x-[-100%] group-hover/tech:translate-x-[100%] transition-transform duration-700"
+                    ></div>
+
+                    <!-- Texto com z-index para ficar acima do efeito -->
+                    <span class="relative z-10">{{ tech }}</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Rodapé com ações com cores -->
+              <div class="flex items-center justify-between border-t border-white/5 pt-6">
+                <!-- Links -->
+                <div class="flex items-center gap-4">
+                  <a
+                    :href="item.link_projeto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[15px] flex items-center gap-1.5 p-2 group/link"
+                    :class="
+                      item.finish
+                        ? 'text-slate-900 gradient-btn rounded'
+                        : 'text-white/30 pointer-events-none'
+                    "
+                  >
+                    <svg
+                      class="w-3 h-3 transform group-hover/link:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    <span class="font-medium">{{ $t('projetos.verProjeto') }}</span>
+                  </a>
+                </div>
+
+                <!-- Ano ou status sutil com cor -->
+                <div
+                  class="text-xs font-medium px-2 py-1 rounded"
+                  :class="
+                    item.real
+                      ? 'bg-emerald-500/10 text-emerald-400/70'
+                      : 'bg-amber-500/10 text-amber-400/70'
+                  "
+                >
+                  {{ item.real_string }}
+                </div>
+              </div>
             </div>
+
+            <!-- Linha decorativa lateral do card com cor no hover -->
+            <div
+              class="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent group-hover:via-thirdTheme/30 transition-all duration-500"
+            ></div>
           </div>
 
-          <!-- DESCRIÇÃO DO PROJETO -->
-          <p class="mb-4 flex items-center grow">{{ item.desc }}</p>
-
-          <!-- Container onde ficam as techs utilizadas no projeto -->
-          <div class="flex flex-col justify-end grow">
-            <!-- Titulo tecnologias usadas -->
-            <h2 class="text-mainTheme text-lg font-bold mb-3">
-              {{ $t('projetos.tecnologiasUsadas') }}
-            </h2>
-
-            <!-- Aqui são as tecnologias usadas que serão renderizadas dentro de uma span -->
-            <div class="flex flex-wrap gap-2 min-h-[64px]">
-              <span
-                v-for="(tech, techIndex) in item.tech_usadas"
-                :key="techIndex"
-                class="bg-thirdTheme/10 text-thirdTheme py-1 px-3 rounded-full h-fit text-sm hover:bg-thirdTheme/20 hover:shadow-2xl hover:shadow-thirdTheme/60"
-                :class="{ 'blur-sm opacity-40': !item.finish }"
-              >
-                {{ tech }}
-              </span>
-            </div>
-          </div>
-
-          <!--Container para ver projeto e Github-->
-          <div class="flex justify-between items-center mt-6">
-            <!-- Link para ver projeto -->
-            <a
-              :href="item.link_projeto"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 font-semibold border-b-2 pb-1 border-secondaryTheme text-mainTheme hover:text-mainTheme/80 transition-colors duration-500"
-              :class="{ 'opacity-30 pointer-events-none': !item.finish }"
-            >
-              {{ $t('projetos.verProjeto') }}
-              <i class="bx bx-right-arrow-circle text-2xl text-myWhite"></i>
-            </a>
-
-            <!-- Link para o Github -->
-            <a
-              v-if="item.github"
-              :href="item.github"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex flex-col gap-2 items-center"
-              :class="{ hidden: !item.finish }"
-            >
-              <v-icon name="io-logo-github" scale="1.8" />
-            </a>
-          </div>
+          <!-- LINK PARA O GITHUB EM POSITION ABSOLUTE -->
+          <a :href="item.github" target="_blank" class="absolute top-7 right-7">
+            <v-icon name="io-logo-github" scale="1.4" />
+          </a>
         </motion.div>
       </div>
+
+      <!-- TRAÇO VERDE AO NO FINAL DA SEÇÃO-->
+      <div
+        class="w-[80%] h-[3px] bg-gradient-to-r from-transparent via-thirdTheme/30 to-transparent mx-auto mt-16"
+      ></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { popUp, scaleIn } from '@/animation'
+import { computed } from 'vue'
 import { motion } from 'motion-v'
+import { scaleIn } from '@/animation'
 import { useI18n } from 'vue-i18n'
+import { addIcons } from 'oh-vue-icons'
+import { IoLogoGithub } from 'oh-vue-icons/icons'
+
+addIcons(IoLogoGithub)
 
 const { tm } = useI18n()
 
-// retorna em formato de array de objetos, os dados internacionalizados (pt.json, en.json)
 const data_projects = computed(() => {
   return tm('projetos.lista') as Array<{
     nome: string
@@ -113,15 +167,8 @@ const data_projects = computed(() => {
     link_projeto: string
     github: string
     real: boolean
+    real_string: string
     finish: boolean
   }>
 })
-
-// Estado reativo para o index do tooltip ativo
-const activeTooltipIndex = ref<number | null>(null)
-
-// Função para alternar a exibição do tooltip
-const handleTooltipToggle = (index: number) => {
-  activeTooltipIndex.value = activeTooltipIndex.value === index ? null : index
-}
 </script>

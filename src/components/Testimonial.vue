@@ -62,7 +62,10 @@ import 'vue3-carousel/dist/carousel.css'
 import { scaleIn, popUp } from '@/animation'
 import { motion } from 'motion-v'
 import { useI18n } from 'vue-i18n'
+import { addIcons } from 'oh-vue-icons'
+import { FaUser } from 'oh-vue-icons/icons'
 
+addIcons(FaUser)
 const { tm } = useI18n()
 
 // Depoimentos vêm diretamente da tradução
