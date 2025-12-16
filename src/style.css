@@ -83,71 +83,13 @@ body {
   }
 }
 
-strong {
-  @apply text-secondaryTheme italic;
-}
-
 .strong2 {
   @apply !text-thirdTheme italic;
 }
 
-.gradient-text {
-  @apply bg-gradient-to-r from-mainTheme via-mainTheme to-sky-500 bg-clip-text text-transparent;
-}
-
-.btn-hover {
-  /* Estilização padrão */
-  @apply bg-mainTheme/30 text-white py-3 px-6 font-medium transition relative 
-         overflow-hidden rounded-sm border border-mainTheme shadow-lg;
-
-  /* Estilização do before (efeito de fundo animado) */
-  @apply before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center 
-         before:-translate-x-20 before:rotate-45 before:bg-deepBlue/80 before:duration-1000;
-
-  /* Estilização do hover */
-  @apply hover:text-white hover:shadow-mainTheme hover:shadow-md hover:before:h-64 
-         hover:before:-translate-y-32 transition-all hover:-translate-y-2 duration-700;
-
-  /* Estilização do active */
-  @apply active:scale-95;
-}
-
-.btn-hover2 {
-  /* Estilização padrão */
-  @apply bg-navBlack/10 text-white py-3 px-6 font-medium relative 
-         overflow-hidden rounded-sm border border-mainTheme shadow-md;
-
-  /* Estilização do before (efeito de fundo animado) */
-  @apply before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center 
-         before:-translate-x-20 before:rotate-45 before:bg-mainTheme/30 before:duration-1000;
-
-  /* Estilização do hover */
-  @apply shadow-mainTheme hover:shadow-none transition-all duration-700 hover:before:h-64 
-         hover:before:-translate-y-32 hover:-translate-y-2;
-
-  /* Estilização do active */
-  @apply active:scale-95;
-}
-
-.btn-submit {
-  /* Estilização padrão */
-  @apply bg-deepBlue text-white py-3 px-6 font-medium transition relative 
-         overflow-hidden rounded-sm border border-mainTheme shadow-lg;
-
-  /* Estilização do before (efeito de fundo animado) */
-  @apply transition-all duration-1000;
-
-  @apply shadow-mainTheme hover:shadow-secondaryTheme hover:border-secondaryTheme hover:-translate-y-1;
-}
-.input-style {
-  @apply w-full bg-white/5 font-semibold border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-secondaryTheme focus:bg-secondaryTheme/5;
-}
-
-/* Adicione estas classes ao final do arquivo */
-
 /* Gradiente para botões */
 .gradient-btn {
-  @apply bg-gradient-to-r from-thirdTheme to-fourthTheme
+  @apply bg-gradient-to-r from-thirdTheme/80 to-fourthTheme/80
          hover:from-thirdTheme/90 hover:to-fourthTheme/90 
          transition-all duration-500 shadow-lg shadow-thirdTheme/30 
          hover:shadow-thirdTheme/50;
@@ -157,21 +99,6 @@ strong {
 .gradient-text-theme {
   @apply bg-gradient-to-r from-thirdTheme to-fourthTheme 
          bg-clip-text text-transparent;
-}
-
-/* Animação de flutuação suave */
-@keyframes gentle-float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-gentle-float {
-  animation: gentle-float 4s ease-in-out infinite;
 }
 
 /* Efeito de brilho sutil */
