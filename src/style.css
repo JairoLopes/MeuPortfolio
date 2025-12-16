@@ -14,11 +14,11 @@ body {
 }
 
 @theme {
-  /* c8ff34 */
+  /* 2dd4bf */
   --color-mainTheme: #ecfeff;
-  --color-secondaryTheme: #38bdf8;
-  --color-thirdTheme: #0284c7;
-  --color-fourthTheme: #2dd4bf;
+  --color-secondaryTheme: #00cc99;
+  --color-thirdTheme: #2dd4bf;
+  --color-fourthTheme: #66ff99;
 
   --color-deepBlue: #050505;
   --color-navBlack: #000000;

@@ -53,7 +53,7 @@
       <div class="mt-4">
         <!-- Título minimalista -->
         <motion.div :initial="scaleIn.hidden" :while-in-view="scaleIn.visible" class="mb-12">
-          <h3 class="text-xl sm:text-2xl font-bold text-fourthTheme">
+          <h3 class="text-xl sm:text-2xl font-bold text-mainTheme">
             {{ $t('sobre.tecnologias') }}
           </h3>
           <div
