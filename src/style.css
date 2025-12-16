@@ -17,8 +17,8 @@ body {
   /* c8ff34 */
   --color-mainTheme: #ecfeff;
   --color-secondaryTheme: #38bdf8;
-  --color-thirdTheme: #2dd4bf;
-  --color-fourthTheme: #33bbff;
+  --color-thirdTheme: #0284c7;
+  --color-fourthTheme: #2dd4bf;
 
   --color-deepBlue: #050505;
   --color-navBlack: #000000;
@@ -147,15 +147,15 @@ strong {
 
 /* Gradiente para botões */
 .gradient-btn {
-  @apply bg-gradient-to-r from-thirdTheme to-secondaryTheme 
-         hover:from-thirdTheme/90 hover:to-secondaryTheme/90 
+  @apply bg-gradient-to-r from-thirdTheme to-fourthTheme
+         hover:from-thirdTheme/90 hover:to-fourthTheme/90 
          transition-all duration-500 shadow-lg shadow-thirdTheme/30 
          hover:shadow-thirdTheme/50;
 }
 
 /* Gradiente para textos */
 .gradient-text-theme {
-  @apply bg-gradient-to-r from-thirdTheme to-secondaryTheme 
+  @apply bg-gradient-to-r from-thirdTheme to-fourthTheme 
          bg-clip-text text-transparent;
 }
 

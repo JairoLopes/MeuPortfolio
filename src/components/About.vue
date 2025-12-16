@@ -50,16 +50,16 @@
       </div>
 
       <!-- Container de tecnologias - Versão enxuta -->
-      <motion.div :initial="scaleIn.hidden" :while-in-view="scaleIn.visible" class="mt-4">
+      <div class="mt-4">
         <!-- Título minimalista -->
-        <div class="mb-12">
-          <h3 class="text-xl sm:text-2xl font-bold text-myWhite">
+        <motion.div :initial="scaleIn.hidden" :while-in-view="scaleIn.visible" class="mb-12">
+          <h3 class="text-xl sm:text-2xl font-bold text-fourthTheme">
             {{ $t('sobre.tecnologias') }}
           </h3>
           <div
             class="w-16 h-px bg-gradient-to-r from-thirdTheme to-secondaryTheme mx-auto mt-2"
           ></div>
-        </div>
+        </motion.div>
 
         <!-- Grid de skills enxuto -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
@@ -113,7 +113,7 @@
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       <!-- Separador minimalista -->
       <div

@@ -95,29 +95,22 @@
                         : 'text-white/30 pointer-events-none'
                     "
                   >
-                    <svg
-                      class="w-3 h-3 transform group-hover/link:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
+                    <!-- ícone de link ao lado de ver projeto -->
+                    <v-icon
+                      name="hi-link"
+                      scale="0.9"
+                      class="group-hover/link:rotate-45 transition-all duration-300"
+                    />
                     <span class="font-medium">{{ $t('projetos.verProjeto') }}</span>
                   </a>
                 </div>
 
-                <!-- Ano ou status sutil com cor -->
+                <!-- categorizando real ou fictício sutil com cor -->
                 <div
                   class="text-xs font-medium px-2 py-1 rounded"
                   :class="
                     item.real
-                      ? 'bg-emerald-500/10 text-emerald-400/70'
+                      ? 'bg-thirdTheme/10 text-thirdTheme/90'
                       : 'bg-amber-500/10 text-amber-400/70'
                   "
                 >
@@ -128,7 +121,7 @@
 
             <!-- Linha decorativa lateral do card com cor no hover -->
             <div
-              class="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent group-hover:via-thirdTheme/30 transition-all duration-500"
+              class="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent group-hover:via-thirdTheme/60 transition-all duration-500"
             ></div>
           </div>
 
@@ -141,7 +134,7 @@
 
       <!-- TRAÇO VERDE AO NO FINAL DA SEÇÃO-->
       <div
-        class="w-[80%] h-[3px] bg-gradient-to-r from-transparent via-thirdTheme/30 to-transparent mx-auto mt-16"
+        class="w-[80%] h-[2px] bg-gradient-to-r from-transparent via-thirdTheme/60 to-transparent mx-auto mt-16"
       ></div>
     </div>
   </section>
@@ -153,9 +146,9 @@ import { motion } from 'motion-v'
 import { scaleIn } from '@/animation'
 import { useI18n } from 'vue-i18n'
 import { addIcons } from 'oh-vue-icons'
-import { IoLogoGithub } from 'oh-vue-icons/icons'
+import { IoLogoGithub, HiLink } from 'oh-vue-icons/icons'
 
-addIcons(IoLogoGithub)
+addIcons(IoLogoGithub, HiLink)
 
 const { tm } = useI18n()
 

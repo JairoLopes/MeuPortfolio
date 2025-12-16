@@ -3,48 +3,8 @@
     id="home"
     class="min-h-screen flex flex-col items-center justify-center relative z-20 overflow-hidden pt-[7%] px-4 sm:px-6 md:px-8"
   >
-    <!-- --------- VIDEOS PARA BACKGROUND COM OVERLAY MELHORADO --------------------- -->
-    <!-- Video para desktop -->
-    <video
-      class="hidden sm:block absolute inset-0 w-full h-full object-cover -z-10"
-      autoplay
-      loop
-      muted
-      playsinline
-      src="/video/bgDesktop.mp4"
-    />
-
-    <!-- Video para mobile -->
-    <video
-      class="block sm:hidden absolute inset-0 w-full h-full object-cover -z-10"
-      autoplay
-      loop
-      muted
-      playsinline
-      src="/video/bgM2.mp4"
-    />
-
-    <!-- Overlay gradiente rico com cores do tema -->
-    <div
-      class="absolute inset-0 -z-10 bg-gradient-to-br from-deepBlue/95 via-navBlack/85 to-thirdTheme/20"
-    ></div>
-
-    <!-- Container de efeitos visuais para o background -->
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-      <!-- Partículas animadas -->
-      <div
-        class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-thirdTheme/20 blur-3xl animate-p"
-      ></div>
-      <div
-        class="absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full bg-secondaryTheme/15 blur-3xl animate-pulse"
-        style="animation-delay: 1s"
-      ></div>
-      <div
-        class="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-mainTheme/10 blur-3xl animate-pulse"
-        style="animation-delay: 0.5s"
-      ></div>
-    </div>
-    <!-- -------- FIM DO BLOCO DE VIDEOS PARA BACKGROUND ------- -->
+    <!-- Background do Home -->
+    <BackgroundVideo />
 
     <!-- Container principal com mais espaçamento -->
     <div class="text-center z-10 w-full max-w-4xl mx-auto relative py-12 md:py-20">
@@ -66,7 +26,7 @@
       >
         <CrossfadeTech
           :textos="['Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'Node.js']"
-          classesTw="text-2xl md:text-3xl lg:text-4xl font-bold text-fourthTheme"
+          classesTw="text-2xl md:text-3xl lg:text-4xl font-bold text-secondaryTheme"
         />
       </motion.div>
 
@@ -182,6 +142,7 @@
 
 <script setup lang="ts">
 import CrossfadeTech from './CrossfadeTech.vue'
+import BackgroundVideo from './BackgroundVideo.vue'
 import { motion } from 'motion-v'
 import { scaleIn, slideUp, flipY } from '@/animation'
 import { useI18n } from 'vue-i18n'

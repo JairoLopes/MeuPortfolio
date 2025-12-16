@@ -3,8 +3,9 @@
     <!-- Renderiza o LoadingScreen apenas se isLoaded for 'false' -->
     <LoadingScreen v-if="!isLoaded" @complete="handleLoadingComplete" />
 
+    <!-- CONTAINER ONDE ESTÃO TODOS OS COMPONENTES -->
     <div
-      class="overflow-x-hidden min-h-screen transition-opacity duration-700 bg-deepBlue text-myWhite"
+      class="overflow-x-hidden min-h-screen transition-opacity duration-700 text-myWhite"
       :class="{ 'opacity-100': isLoaded, 'opacity-0': !isLoaded }"
     >
       <!-- NavBar e MobileMenu - serão renderizados sempre, mas a visibilidade interna é controlada por 'menuOpen' -->

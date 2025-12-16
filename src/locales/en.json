@@ -82,7 +82,7 @@
     "lista": [
       {
         "nome": "Personal Site",
-        "desc": "Portfolio and personal trainer hiring landing page",
+        "desc": "Complete landing page for personal trainer portfolio and hiring, showcasing services, plans, responsively, performatively, and professionally.",
         "tech_usadas": ["React", "Tailwind CSS", "TypeScript"],
         "link_projeto": "https://talles-personal.vercel.app/",
         "github": "https://github.com/JairoLopes/personal_trainer",

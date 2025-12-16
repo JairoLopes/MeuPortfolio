@@ -8,7 +8,7 @@
       <motion.h3
         :initial="scaleIn.hidden"
         :while-in-view="scaleIn.visible"
-        class="text-2xl sm:text-4xl font-bold mb-8 text-center gradient-text"
+        class="text-2xl sm:text-4xl font-bold mb-8 text-center text-mainTheme"
       >
         {{ $t('experiencia.tituloSecao') }}
       </motion.h3>
