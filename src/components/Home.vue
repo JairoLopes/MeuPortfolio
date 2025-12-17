@@ -25,7 +25,15 @@
         class="mb-2 md:mb-7 px-4"
       >
         <CrossfadeTech
-          :textos="['Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'Node.js']"
+          :textos="[
+            'Vue.js',
+            'Pinia',
+            'Tailwind CSS',
+            'DaisyUI',
+            'Typescript',
+            'JavaScript',
+            'Node.js',
+          ]"
           classesTw="text-2xl md:text-3xl lg:text-4xl font-bold text-secondaryTheme"
         />
       </motion.div>

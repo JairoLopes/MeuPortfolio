@@ -16,7 +16,7 @@
   },
 
   "home": {
-    "descricao": "Desenvolvedor Frontend especializado em <strong class='strong2'>Vue.js</strong>, combinando tecnologias como <strong class='!text-myWhite'>Tailwind CSS</strong> e <strong class='!text-myWhite'>TypeScript</strong> para criar interfaces modernas e responsivas.",
+    "descricao": "Desenvolvedor Frontend especializado em <strong class='strong2'>Vue.js</strong>, combinando tecnologias como <strong class='text-myWhite'>Tailwind CSS</strong>, <strong class='text-myWhite'>DaisyUI</strong> e <strong class='!text-myWhite'>TypeScript</strong> para criar interfaces modernas e responsivas.",
     "ver": "Ver",
     "projetos": "Projetos",
     "contato": "Contato",

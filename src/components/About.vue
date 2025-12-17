@@ -79,7 +79,7 @@
                 <v-icon
                   :name="skill.icon"
                   scale="2"
-                  class="text-sky-400 transition-colors duration-300"
+                  class="text-amber-500 transition-colors duration-300"
                   :fill="skill.tech === 'JavaScript' ? '#ffcc00' : ''"
                 />
               </div>
@@ -135,7 +135,7 @@ import {
   ViFileTypeTailwind,
   CoJavascript,
   ViFileTypeNode,
-  SiVuetify,
+  IoFlower,
 } from 'oh-vue-icons/icons'
 
 addIcons(
@@ -145,7 +145,7 @@ addIcons(
   ViFileTypeTailwind,
   CoJavascript,
   ViFileTypeNode,
-  SiVuetify,
+  IoFlower,
 )
 
 const { t } = useI18n()
@@ -153,8 +153,8 @@ const { t } = useI18n()
 // Array de skills simplificado SiVuetify
 const skills = [
   { tech: 'Vue.js', icon: 'vi-file-type-vue', level: 5 },
-  { tech: 'Vuetify', icon: 'si-vuetify', level: 4 },
   { tech: 'Tailwind', icon: 'vi-file-type-tailwind', level: 5 },
+  { tech: 'DaisyUI', icon: 'io-flower', level: 5 },
   { tech: 'Typescript', icon: 'vi-file-type-typescript-official', level: 4 },
   { tech: 'React', icon: 'vi-file-type-reactjs', level: 3 },
   { tech: 'JavaScript', icon: 'co-javascript', level: 4 },
