@@ -75,9 +75,23 @@
           </span>
         </a>
 
-        <!-- Botão Contato -->
+        <!-- Botão Contato EN(TELEGRAM)-->
         <a
-          :href="locale === 'pt' ? link.pt : link.en"
+          v-if="locale === 'en'"
+          :href="link.en"
+          class="group relative px-6 py-3 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
+        >
+          <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
+          <span class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3">
+            <v-icon name="co-telegram-plane" scale="1.2" class="group-hover:animate-bounce" />
+            {{ $t('home.contato') }}
+          </span>
+        </a>
+
+        <!-- Botão Contato PT(WHATSAPP)-->
+        <a
+          v-if="locale === 'pt'"
+          :href="link.pt"
           class="group relative px-6 py-3 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
@@ -161,11 +175,17 @@ const msgPt = encodeURIComponent('Olá, gostaria de fazer um site com você.')
 const msgEn = encodeURIComponent('Hello, I would like to make a website with you.')
 const link = {
   pt: `https://wa.me/5581997052877?text=${msgPt}`,
-  en: `https://wa.me/5581997052877?text=${msgEn}`,
+  en: `https://t.me/Lopes_93?text=${msgEn}`,
 }
 
 import { addIcons } from 'oh-vue-icons'
-import { FaPlus, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin } from 'oh-vue-icons/icons'
+import {
+  FaPlus,
+  RiWhatsappFill,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  CoTelegramPlane,
+} from 'oh-vue-icons/icons'
 
-addIcons(FaPlus, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin)
+addIcons(FaPlus, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin, CoTelegramPlane)
 </script>

@@ -84,7 +84,7 @@ body {
 }
 
 .strong2 {
-  @apply !text-thirdTheme italic;
+  @apply text-thirdTheme italic;
 }
 
 /* Gradiente para botões */
