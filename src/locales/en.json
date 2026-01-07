@@ -5,6 +5,7 @@
       "home": "Home",
       "sobre": "About",
       "experiencia": "Experience",
+      "templates": "Templates",
       "projetos": "Projects",
       "depoimentos": "Testimonials",
       "contato": "Contact"
@@ -21,6 +22,7 @@
   "home": {
     "descricao": "Frontend Developer specialized in <strong class='strong2'>Vue.js</strong>, combining technologies such as <strong class='text-myWhite'>Tailwind CSS</strong>, <strong class='text-myWhite'>DaisyUI</strong> and <strong class='!text-myWhite'>TypeScript</strong> to create modern and responsive interfaces.",
     "ver": "View",
+    "templates": "Templates",
     "projetos": "Projects",
     "contato": "Contact",
     "social": "Professional social networks"
@@ -36,6 +38,37 @@
       "intermediario": "Intermediate",
       "basico": "Basic"
     }
+  },
+
+  "templates": {
+    "tituloSecao": "Ready Templates",
+    "subtituloSecao": "Professional and fully customizable templates to speed up your development",
+    "verDemo": "Demo",
+    "comprarAgora": "Buy",
+    "destaque": "Best Seller",
+    "personalizacao": "Need specific customizations?",
+    "entreEmContato": "Contact me",
+    "lista": [
+      {
+        "id": 1,
+        "nome": "VueDash",
+        "desc": "Complete admin dashboard with Vue.js 3, TypeScript and Tailwind CSS. Perfect for management systems.",
+        "tech_usadas": ["Vue.js 3", "TypeScript", "Tailwind CSS", "Pinia", "Vue Router"],
+        "recursos": [
+          "Responsive layout",
+          "Reusable components",
+          "Light/dark mode",
+          "Interactive charts",
+          "Integrated authentication"
+        ],
+        "demo": "https://lopes-vuedash.vercel.app/",
+        "comprar": "https://payhip.com/b/mz6eJ",
+        "preco": "$17",
+        "preco_original": "$25",
+        "licenca": "Single license for 1 project",
+        "destaque": false
+      }
+    ]
   },
 
   "experiencia": {

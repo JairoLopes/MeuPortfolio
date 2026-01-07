@@ -124,8 +124,9 @@ const emit = defineEmits<{
 const menuItems = [
   { key: 'navbar.menu.home', href: '#home' },
   { key: 'navbar.menu.sobre', href: '#about' },
-  { key: 'navbar.menu.experiencia', href: '#experiencia' },
+  { key: 'navbar.menu.templates', href: '#templates' },
   { key: 'navbar.menu.projetos', href: '#projects' },
+  { key: 'navbar.menu.experiencia', href: '#experiencia' },
   { key: 'navbar.menu.depoimentos', href: '#depoimentos' },
 ]
 

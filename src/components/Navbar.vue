@@ -58,12 +58,12 @@
             ></span>
           </a>
 
-          <!-- EXPERIENCIA -->
+          <!-- TEMPLATES -->
           <a
-            href="#experiencia"
+            href="#templates"
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
-            {{ $t('navbar.menu.experiencia') }}
+            {{ $t('navbar.menu.templates') }}
             <span
               class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>
@@ -75,6 +75,17 @@
             class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
           >
             {{ $t('navbar.menu.projetos') }}
+            <span
+              class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
+            ></span>
+          </a>
+
+          <!-- EXPERIENCIA -->
+          <a
+            href="#experiencia"
+            class="text-gray-300 hover:text-gray-300 hover:drop-shadow-lg transition-all relative group py-2"
+          >
+            {{ $t('navbar.menu.experiencia') }}
             <span
               class="absolute left-1/2 -bottom-0.5 w-0 h-0.5 bg-thirdTheme group-hover:w-full transition-all duration-500 -translate-x-1/2"
             ></span>

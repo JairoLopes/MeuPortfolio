@@ -51,39 +51,60 @@
         ></p>
       </motion.div>
 
-      <!-- Botões ver projetos e contato-->
+      <!-- Botões templates e projetos-->
       <motion.div
         :initial="slideUp.hidden"
         :while-in-view="slideUp.visible"
-        class="flex max-smm:flex-col flex-row justify-center items-center gap-4 md:gap-6 mb-16 md:mb-20 px-4"
+        class="flex max-smm:flex-col flex-row justify-center items-center gap-4 md:gap-6 mb-4 px-4"
       >
-        <!-- Botão Projetos -->
+        <!-- Botão Templates -->
         <a
-          href="#projects"
-          class="group relative px-6 py-3 rounded-xl gradient-btn overflow-hidden transition-all duration-100 hover:scale-105"
+          href="#templates"
+          class="group relative px-6 py-3 rounded-xl gradient-btn min-w-[169px] overflow-hidden transition-all duration-100 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
           <span
             class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3 relative z-10"
           >
             <v-icon
-              name="fa-plus"
+              name="ri-layout-2-fill"
+              scale="1.2"
+              class="transition-transform duration-400 group-hover:animate-"
+            />
+            {{ $t('home.templates') }}
+          </span>
+        </a>
+
+        <!-- Botão Projetos -->
+        <a
+          href="#projects"
+          class="group relative px-6 py-3 min-w-[169px] rounded-xl gradient-btn overflow-hidden transition-all duration-100 hover:scale-105"
+        >
+          <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
+          <span
+            class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3 relative z-10"
+          >
+            <v-icon
+              name="fa-code"
               scale="1.2"
               class="transition-transform duration-400 group-hover:-rotate-20"
             />
             {{ $t('home.projetos') }}
           </span>
         </a>
+      </motion.div>
 
+      <!-- Container que engloba botao contatos EN e PT -->
+      <div class="flex justify-center mb-17">
         <!-- Botão Contato EN(TELEGRAM)-->
         <a
           v-if="locale === 'en'"
           :href="link.en"
-          class="group relative px-6 py-3 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
+          class="group relative bg-deepBlue min-w-[169px] border border-thirdTheme px-6 py-3 rounded-xl transition-all duration-500 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
-          <span class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3">
-            <v-icon name="co-telegram-plane" scale="1.2" class="group-hover:animate-bounce" />
+          <span class="text-thirdTheme font-bold text-[16px] tracking-wide flex items-center gap-3">
+            <v-icon name="co-telegram-plane" scale="1.2" class="" />
             {{ $t('home.contato') }}
           </span>
         </a>
@@ -92,21 +113,21 @@
         <a
           v-if="locale === 'pt'"
           :href="link.pt"
-          class="group relative px-6 py-3 rounded-xl gradient-btn transition-all duration-500 hover:scale-105"
+          class="group relative min-w-[169px] bg-deepBlue border border-thirdTheme px-6 py-3 rounded-xl transition-all duration-500 hover:scale-105"
         >
           <!-- SPAN QUE ENGLOBA ICONE E TEXTO DO BOTÃO -->
-          <span class="text-navBlack font-bold text-[16px] tracking-wide flex items-center gap-3">
-            <v-icon name="ri-whatsapp-fill" scale="1.2" class="group-hover:animate-bounce" />
+          <span class="text-thirdTheme font-bold text-[16px] tracking-wide flex items-center gap-3">
+            <v-icon name="ri-whatsapp-fill" scale="1.2" class="" />
             {{ $t('home.contato') }}
           </span>
         </a>
-      </motion.div>
+      </div>
 
       <!-- Container que engloba subcontainer de icones do linkedin e  github -->
       <motion.div
         :initial="flipY.hidden"
         :while-in-view="flipY.visible"
-        class="flex flex-col justify-center items-center gap-6 relative px-4"
+        class="flex flex-col justify-center items-center gap-6 relative"
       >
         <p class="text-myWhite/90 text-[16px] mb-3 font-medium tracking-wider hidden sm:block">
           {{ $t('home.social') }}
@@ -180,12 +201,13 @@ const link = {
 
 import { addIcons } from 'oh-vue-icons'
 import {
-  FaPlus,
+  RiLayout2Fill,
+  FaCode,
   RiWhatsappFill,
   IoLogoGithub,
   IoLogoLinkedin,
   CoTelegramPlane,
 } from 'oh-vue-icons/icons'
 
-addIcons(FaPlus, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin, CoTelegramPlane)
+addIcons(RiLayout2Fill, FaCode, RiWhatsappFill, IoLogoGithub, IoLogoLinkedin, CoTelegramPlane)
 </script>

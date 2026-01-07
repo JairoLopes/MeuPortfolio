@@ -19,10 +19,13 @@
       <About />
 
       <!-- Componente Exp -->
-      <Exp />
+      <Templates />
 
       <!-- Componente Projects -->
       <Projects />
+
+      <!-- Componente Exp -->
+      <Exp />
 
       <!-- Componente Testimonial -->
       <Testimonial />
@@ -45,6 +48,7 @@ import MobileMenu from '@/components/MobileMenu.vue'
 import Home from '@/components/Home.vue'
 import About from '@/components/About.vue'
 import Exp from '@/components/Exp.vue'
+import Templates from './components/Templates.vue'
 import Projects from '@/components/Projects.vue'
 import Testimonial from '@/components/Testimonial.vue'
 import Footer from './components/Footer.vue'
